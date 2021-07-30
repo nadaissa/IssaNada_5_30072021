@@ -1,14 +1,14 @@
 # Project n°5 - OpenClassrooms courses
-
+:credit_card: Create an online shop site - Orinoco 
 ## Project targets
 
-Create a test plan  for the project
+:pencil: :alembic: Create a test plan  for the project
 
-Interact with a web service with JavaScript
+:computer: :left_right_arrow: Interact with a web service with JavaScript
 
-Validate data from external sources
+:alien: Validate data from external sources
 
-Manage JavaScript events
+:traffic_light: Manage JavaScript events
 ## Progress
 
 :construction:
