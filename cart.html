@@ -3,65 +3,56 @@
 <html lang="fr">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
-    <script src="https://kit.fontawesome.com/1e8b216979.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <title>Orinco-Shopping Land</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <script src="https://kit.fontawesome.com/1e8b216979.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <title>Orinco-Votre panier</title>
 </head>
 
 <body>
+  <div class="container-fluid bg-dark">
     <!--header and navigation zone-->
-    <header class="bg-info">
-        <div class="container">
-          <div class="row">
-            <nav class="col navbar navbar-expand-lg navbar-dark">
-              <a class="navbar-brand font-italic" href="index.html">
-                <span class="fas fa-shopping-cart font-italic"></span>
-                <!--<img src="images/favicon.png" width="50" height="50" alt="Orinoco Logo" />-->
-                Orinoco
-              </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div id="navbarContent" class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Accueil</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="cart.html">Panier</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+    <header>
+        <nav class="row navbar d-flex">
+          <a class="navbar-brand font-italic text-white" href="index.html">
+            <span class="fas fa-shopping-cart font-italic text-white"></span>
+            <!--<img src="images/favicon.png" width="50" height="50" alt="Orinoco Logo" />-->
+            Orinoco
+          </a>
+          <div class="d-flex">
+            <a class="nav-link text-white" href="index.html"><span class="fas fa-home"></span></a>
+            <a class="nav-link text-white active" href="cart.html"><span class="fas fa-shopping-basket"></span></a>
           </div>
-        </div>
+        </nav> 
     </header>
     <!--end header and navigation zone-->
     
-
+    <!--main content zone: temporary content for testing purposes-->
+    <div class="row mt-3">
+      <div class="col">
+        <h1 class="text-white">Text temporaire</h1>
+        <p class="text-white">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+      </div>
+    </div>
+    <!--end main content zone-->
 
     <!--footer zone-->
-    <footer class="bg-light fixed-bottom">
-        <div class="container">
-            <div class="row pt-4 pb-3">
-                <div class="col">
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item "><a class="text-info" href="#">À propos</a></li>
-                        <li class="list-inline-item">&middot;</li>
-                        <li class="list-inline-item"><a class="text-info" href="#">Nos partenaires</a></li>
-                        <li class="list-inline-item">&middot;</li>
-                        <li class="list-inline-item"><a class="text-info" href="#">Contactez-nous</a></li>
-                    </ul>
-                </div>
-            </div>
+    <footer class="container mt-3">
+        <div class="row">
+          <div class="col">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item"><a class="text-info" href="#">À propos</a></li>
+              <li class="list-inline-item"><a class="text-info" href="#">Nos partenaires</a></li>
+              <li class="list-inline-item"><a class="text-info" href="#">Contactez-nous</a></li>
+            </ul>
+          </div>
         </div>
     </footer>
     <!--end footer zone-->
-
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
