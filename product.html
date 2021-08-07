@@ -9,46 +9,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
   <script src="https://kit.fontawesome.com/1e8b216979.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Georama:wght@200;300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   
   <title>Orinoco-votre produit</title>
 </head>
 
 <body>
-  <div class="container-fluid bg-dark">
+  <div id="main-wrapper" class="container-fluid">
     <!--header and navigation zone-->
-    <header>
-        <nav class="row navbar d-flex align-items-baseline">
-          <a class="navbar-brand font-italic text-white" href="index.html" aria-label="zone logo">
-            <span class="fas fa-shopping-cart font-italic text-white"></span>
-            <!--<img src="images/favicon.png" width="50" height="50" alt="Orinoco Logo" />-->
+    <header id="header">
+        <nav id="nav" class="row navbar d-flex align-items-baseline">
+          <a id="nav__logo-link" class="navbar-brand font-italic" href="index.html" aria-label="zone logo">
+            <img id="nav__logo-icon" src="images/favicon.png" alt="Orinoco Logo" />
             Orinoco
           </a>
-          <div class="d-flex">
-            <a class="nav-link text-white active" href="index.html" aria-label="icon accueil"><span class="fas fa-home"></span></a>
-            <a class="nav-link text-white" href="cart.html" aria-label="icon panier"><span class="fas fa-shopping-basket"></span></a>
+          <div id="nav__links" class="d-flex">
+            <a id="nav__home-icon" class="nav-link active" href="index.html" aria-label="icon accueil"><span class="fas fa-home"></span></a>
+            <a id="nav__cart-icon" class="nav-link" href="cart.html" aria-label="icon panier"><span class="fas fa-shopping-basket"></span></a>
           </div>
         </nav> 
     </header>
     <!--end header and navigation zone-->
     
+    <div class="container p-0 d-flex flex-column justify-content-center h-100">
     <!--main content zone: temporary content for testing purposes-->
-    <div class="row mt-3" role="main">
-      <div class="col">
-        <h2 class="text-white">Text temporaire</h2>
-        <p class="text-white">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+      <div id="pcontent" class="row" role="main">
+        <div id="pcontent__wrapper" class="col">
+          <h2 id="pcontent__h2">Text temporaire</h2>
+          <p id="pcontent__p">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+        </div>
       </div>
-    </div>
     <!--end main content zone-->
+    </div>
 
     <!--footer zone-->
-    <footer class="container mt-3">
-        <div class="row">
-          <div class="col">
-            <ul class="list-inline text-center font-weight-light">
-              <li class="list-inline-item"><a class="text-white" href="#">À propos</a></li>
-              <li class="list-inline-item"><a class="text-white" href="#">Nos partenaires</a></li>
-              <li class="list-inline-item"><a class="text-white" href="#">Contactez-nous</a></li>
+    <footer id="footer">
+        <div id="footer__wrapper" class="row">
+          <div id="footer__list-wrapper" class="col">
+            <ul id="footer__ul" class="list-inline text-center font-weight-light">
+              <li class="list-inline-item"><a id="about-link" href="#">À propos</a></li>
+              <li class="list-inline-item"><a id="partners-link" href="#">Nos partenaires</a></li>
+              <li class="list-inline-item"><a id="contact-link" href="#">Contactez-nous</a></li>
             </ul>
           </div>
         </div>
