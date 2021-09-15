@@ -25,15 +25,12 @@ document.querySelector("div.container-fluid").style.cssText =
 
     //intro style
     document.getElementById("intro__jumbotron").style.cssText =
-    "max-width: 550px; padding: 25px 15px 25px 15px; background: linear-gradient(180deg, rgba(231,139,6,0.9) 14%, rgba(143,91,254,0.8) 100%); font-size: 0.8rem; color: #ffffff";
+    "max-width: 550px; padding: 25px 15px 25px 15px; background: linear-gradient(180deg, rgba(231,139,6,0.9) 14%, rgba(143,91,254,0.8) 100%); font-size: 0.9rem; color: #ffffff";
         
         let heading1 = document.getElementsByTagName("h1");
             for(i of heading1){
                 i.style.cssText="font-size: 1.2rem; font-weight: bold; margin-top: 10px;"
             };
-
-    //temporary content
-    document.getElementById("pcontent").style.color = "white";
 
     //footer style
     document.querySelector("footer").style.cssText = 
