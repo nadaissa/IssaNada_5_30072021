@@ -12,3 +12,4 @@ class Product{
         this.quantity = quantity;        
     };
 };
+//end of Product class
