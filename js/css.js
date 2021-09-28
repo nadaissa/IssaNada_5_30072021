@@ -32,12 +32,12 @@ mWrapper.style.cssText =
     //intro style
     const jumbotron = document.getElementById("intro__jumbotron");
     jumbotron.style.cssText =
-    "max-width: 550px; padding: 25px 15px 25px 15px; background: linear-gradient(-199deg, rgba(231,139,6,0.9) -20%, rgba(143,91,254,0.8) 100%); font-size: 0.9rem; color: #ffffff";
+    "max-width: 550px; padding: 25px 15px 25px 15px; background: linear-gradient(-199deg, rgba(231,139,6,0.9) -20%, rgba(143,91,254,0.8) 100%); font-size: 1.2rem; color: #ffffff";
         
         const heading1 = document.getElementsByTagName("h1");
             for(i of heading1){
                 i.style.cssText=
-                "font-size: 1.2rem; font-weight: bold; margin-top: 10px;"
+                "font-size: 2rem; font-weight: bold; margin-top: 10px;"
             };
 
     //footer style
