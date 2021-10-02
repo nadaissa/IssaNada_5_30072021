@@ -6,6 +6,29 @@ const productId = urlParams.get("_id");
 //url constant with id parameter
 const productUrl = `http://localhost:3000/api/cameras/${productId}`;
 
+//defining the optional lenses function to be insert to the single product fetch later
+
+function lenseParam(singleProduct){
+    let txt = '';
+    for (let lense of singleProduct.lenses){
+        txt += `<option>${lense}</option>`;           
+        };
+        return txt;  
+
+};
+
+//defining the price converting function to be insert to the single product fetch later
+function convertPrice(productPrice) {
+    let cost = `${productPrice}`;
+    cost = Intl.NumberFormat("fr-FR", {
+        style: "currency",
+        currency: "EUR",
+        minimumFractionDigits: 2,
+    }).format(cost / 100);
+    return cost;
+};
+
+
 //fetching single product and defining its display
 
 fetch(productUrl)
@@ -30,16 +53,18 @@ fetch(productUrl)
                         <p class="card-text">${singleProduct.description}</p>
                         <select class="custom-select my-2">
                                 <option >Modèles</option>
-                                ${singleProduct.lenses.map(function (lense) {
-                                    return `<option>${lense}</option>`
-                                    })
-                                }                                
+                                ${lenseParam(singleProduct)}                                                      
                         </select>
+                        <p id="price_tag" class="card-text font-weight-bold text-right my-2">
+                                <span class="my-1">Prix</span>
+                                <span class="my-1">${convertPrice(singleProduct.price)}</span>                        
+                                </p>
                         <a href="#" class="btn btn-primary btn-dark font-weight-bold my-2 ">Ajouter au panier</a>
                     </div>
             </div>
             </div>`
     };
-
+    
+     
 
      
