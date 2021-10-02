@@ -23,7 +23,6 @@ fetch("http://localhost:3000/api/cameras")
                         <img class="card-img-top" src="${product.imageUrl}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title font-weight-bold">${product.name}</h5>
-                            <p class="card-text">${product.description}</p>
                             <a href="./product.html?_id=${product._id}" class="btn btn-primary btn-dark font-weight-bold ">Voir le produit</a>
                         </div>
                 </div>
