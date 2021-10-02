@@ -3,7 +3,7 @@
 fetch("http://localhost:3000/api/cameras")
         .then((response) => response.json())
         .then((data) => {
-        ListProducts(data);
+        listProducts(data);
     })
 
     //the error catch
@@ -14,7 +14,7 @@ fetch("http://localhost:3000/api/cameras")
     //The function mentioned in the fetch needs to be configured in order to display the products
     //image, title and description are called directly in the data fetched previously and then in relation to the product class i've created
     //the link to the product page includes the query http protocole with reference to the product id
-    function ListProducts(data) {
+    function listProducts(data) {
         for (product of data){
             const content = document.querySelector("#pcontent");
             content.innerHTML +=

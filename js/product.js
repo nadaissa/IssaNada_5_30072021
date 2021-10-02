@@ -9,11 +9,11 @@ const productUrl = `http://localhost:3000/api/cameras/${productId}`;
 //defining the optional lenses function to be insert to the single product fetch later
 
 function lenseParam(singleProduct){
-    let txt = '';
+    let optionContent = '';
     for (let lense of singleProduct.lenses){
-        txt += `<option>${lense}</option>`;           
+        optionContent += `<option>${lense}</option>`;           
         };
-        return txt;  
+        return optionContent;  
 
 };
 
