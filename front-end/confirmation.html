@@ -40,17 +40,46 @@
           <div id="intro__wrapper" class="col d-flex justify-content-center">
             <div id="intro__jumbotron" class="jumbotron">
               <h1 id="intro__h1" class="font-weight-light text-center">Vous y êtes presque!</h1>
-              <p id="intro__p" class="font-weight-light text-center">Juste quelques champs à remplir</p>
+              <p id="intro__p" class="font-weight-light text-center">Juste un formulaire</p>
             </div>
           </div>    
         </div>
       <!--end intro zone-->
   
       <!--main content zone: temporary content for testing purposes-->
-        <div id="pcontent" class="row" role="main">
+        <div id="pcontent" class="row text-white" role="main">
           <div id="pcontent__wrapper" class="col">
-            <h2 id="pcontent__h2">Text temporaire</h2>
-            <p id="pcontent__p">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="FirstName">Prénom</label>
+                  <input type="text" class="form-control" id="FirstName" placeholder="Prénom">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="LastName">Nom</label>
+                  <input type="text" class="form-control" id="LastName" placeholder="Nom">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress">Adresse</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Numéro et nom de la rue">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Ville</label>
+                  <input type="text" class="form-control" id="inputCity" placeholder="Votre ville">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputZip">Code postal</label>
+                  <input type="text" class="form-control" id="inputZip" placeholder="Code postal">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-light">Confirmation</button>
+            </form>
           </div>
         </div>
       <!--end main content zone-->

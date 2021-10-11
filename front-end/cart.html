@@ -39,8 +39,8 @@
         <div id="intro-zone" class="row" role="complementary">
           <div id="intro__wrapper" class="col d-flex justify-content-center">
             <div id="intro__jumbotron" class="jumbotron">
-              <h1 id="intro__h1" class="font-weight-light text-center">Panier de vos achats</h1>
-              <p id="intro__p" class="font-weight-light text-center">Commandez quand vous êtes prêt.e</p>
+              <h1 id="intro__h1" class="font-weight-light text-center">Votre panier</h1>
+              <p id="intro__p" class="font-weight-light text-center">Vérifiez et commandez</p>
             </div>
           </div>    
         </div>
@@ -53,7 +53,7 @@
             <table class="table table-responsive-md table-light border rounded" data-toggle="table">
               <thead>
                 <tr>
-                  <th scope="col">ID</th>
+                  <th scope="col">Img</th>
                   <th scope="col">Nom</th>
                   <th scope="col">Quantité</th>
                   <th scope="col">Prix</th>
@@ -81,12 +81,13 @@
                   <th colspan="2"></th>
                   <td>Sum</td>
                   <td>$180</td>
+                  <td><button type="button" class="btn btn-danger btn-sm m-1">Vider</button></td>
                 </tr>
               </tfoot>
             </table>
             <div class="col d-flex align-items-center justify-content-center">
-              <button type="button" class="btn btn-light m-1"><a href="../front-end/confirmation.html">Passer la commande</a></button>
-              <button type="button" class="btn btn-danger m-1">Vider le panier</button>
+              <a href="../front-end/confirmation.html"><button type="button" class="btn btn-light m-1">Passer la commande</button></a>
+              <!--<button type="button" class="btn btn-danger m-1">Vider le panier</button>-->
             </div>
           </div>
         </div>
