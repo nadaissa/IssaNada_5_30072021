@@ -1,11 +1,11 @@
-/*class Product{
-    constructor(id, name, description, imageUrl, price, variation, quantity) {
+//class to be used to add products to the shopping cart
+class Product{
+    constructor(id, name, imageUrl, price, quantity) {
         this.id = id;
         this.name = name;
-        this.description = description;
         this.imageUrl = imageUrl;
         this.price = price;
-        this.variation = variation;
         this.quantity = quantity;        
     };
-};*/
+};
+

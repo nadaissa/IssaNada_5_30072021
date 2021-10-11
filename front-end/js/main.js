@@ -16,8 +16,8 @@ fetch("http://localhost:3000/api/cameras")
     //the link to the product page includes the query http protocole with reference to the product id
     function listProducts(data) {
         for (product of data){
-            const content = document.querySelector("#pcontent");
-            content.innerHTML +=
+            const displayDiv = document.querySelector("#pcontent");
+            displayDiv.innerHTML +=
             `<div class="col-sm-6">
                 <div class="card mt-4">
                         <img class="card-img-top" src="${product.imageUrl}" alt="Card image cap">

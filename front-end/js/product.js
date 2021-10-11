@@ -43,8 +43,8 @@ fetch(productUrl)
     });
 
     function displayProduct(singleProduct){    
-        const content = document.querySelector("#pcontent");
-            content.innerHTML += 
+        const productDiv = document.querySelector("#pcontent");
+            productDiv.innerHTML += 
             `<div class="col-sm">
             <div class="card mt-4">
                     <img class="card-img-top" src="${singleProduct.imageUrl}" alt="Card image cap">
@@ -59,12 +59,15 @@ fetch(productUrl)
                                 <span class="my-1">Prix</span>
                                 <span class="my-1">${convertPrice(singleProduct.price)}</span>                        
                                 </p>
-                        <a href="#" class="btn btn-primary btn-dark font-weight-bold my-2 ">Ajouter au panier</a>
+                        <a href="#" class="add_btn btn btn-primary btn-dark font-weight-bold my-2">Ajouter au panier</a>
                     </div>
             </div>
             </div>`
     };
-    
+
+//defining the function to add items to the shopping cart
+
+
      
 
      
