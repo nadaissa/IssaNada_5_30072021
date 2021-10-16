@@ -55,28 +55,18 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
             (condAddress.test(contactInfo.inputAddress) === true) &
             (checkBox.checked === true) 
             ) {
-                alert("bravo!");
+                //alert("bravo!");
+                submitOk();
 
-        } else if(
-            (!condName.test(orderForm.firstName.value)) ||
-            (!condName.test(orderForm.lastName)) ||
-            (!condMail.test(contactInfo.inputEmail)) ||
-            (!condCity.test(contactInfo.inputCity)) ||
-            (!condZip.test(contactInfo.inputZip)) ||
-            (!condAddress.test(contactInfo.inputAddress)) ||
-            (checkBox.checked !== true)     
+        } else {   
 
-        ) {
-            
-            alert("Merci de remplir ou cocher tous les champs!");    
-        
-        
-        } else {
-        
-            alert("Un problème inattendu!");
+            alert("Merci de respecter les consignes de saisie et de remplir et cocher tous les champs!");
         }
     };        
             
+        function submitOk(){
+            
+            console.log("mm");
             /*ici mettre function de submit ou il y a la list de produit et aussi la liste des contacts et post et définir le post
             //here create product list
             /*let products = [];
@@ -99,7 +89,7 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
                 });
                 .catch((erreur) => console.log("erreur : " + erreur));*/
 
-
-/*        */
+        };
+        
 
 
