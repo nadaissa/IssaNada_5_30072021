@@ -18,7 +18,7 @@ mWrapper.style.cssText =
         //logo icon size and margins
         const logoIcon = document.getElementById("nav__logo-icon");
         logoIcon.style.cssText =
-        "width: 1.5 rem; height: 1.5rem; margin-bottom: 10px";
+        "width: 43px; height: 40px; margin-bottom: 10px";
 
         const logoLink = document.getElementById("nav__logo-link");
         logoLink.style.cssText =
@@ -40,6 +40,7 @@ mWrapper.style.cssText =
                 "font-size: 2rem; font-weight: bold; margin-top: 10px;"
             };
 
+    
     //footer style
     const footer = document.querySelector("footer");
     footer.style.cssText = 
