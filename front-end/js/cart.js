@@ -67,7 +67,6 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
             ) {
                 //alert("bravo!");
                 submitOk();
-
         //setting the loop for the non-successful input
         } else {   
 

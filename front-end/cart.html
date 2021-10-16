@@ -95,28 +95,35 @@
                 <div class="form-group col-md-6">
                   <label for="firstName">Prénom</label>
                   <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Prénom" required>
+                  <small id="fNameHelp" class="form-text text-muted">Votre prénom ne doit pas comporter de caractères spéciaux</small>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="lastName">Nom</label>
                   <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Nom" required>
+                  <small id="lNameHelp" class="form-text text-muted">Votre Nom ne doit pas comporter de caractères spéciaux</small>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputEmail">Email</label>
                   <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
+                  <small id="emailHelp" class="form-text text-muted">Votre adresse mail doit comporter un @</small>
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputAddress">Adresse</label>
                 <input type="text" class="form-control" id="inputAddress" name="inputAddress" placeholder="Numéro et nom de la rue" required>
+                <small id="addressHelp" class="form-text text-muted">Numéro de votre rue suivi de son nom sans caractères spéciaux</small>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputCity">Ville</label>
                   <input type="text" class="form-control" id="inputCity" name="inputCity" placeholder="Votre ville" required>
+                  <small id="villeHelp" class="form-text text-muted">Votre ville en toutes lettres</small>
+                
                 </div>
                 <div class="form-group col-md-2">
                   <label for="inputZip">Code postal</label>
                   <input type="text" class="form-control" id="inputZip" name="inputZip" placeholder="Code postal" required>
+                  <small id="zipHelp" class="form-text text-muted">Votre CP de 5 chiffres</small>
                 </div>
               </div>
               <div class="form-group">
@@ -125,6 +132,7 @@
                   <label class="form-check-label" for="checkbox">
                     Acceptez nos conditions
                   </label>
+                  <small id="checkHelp" class="form-text text-muted">Et enfin un petit click!</small>
                 </div>
               </div>
               <div class="col d-flex align-items-center justify-content-center my-4">
