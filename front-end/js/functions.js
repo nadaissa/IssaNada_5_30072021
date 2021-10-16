@@ -1,5 +1,5 @@
 //class to be used to add products to the shopping cart
-class Product{
+class productObject{
     constructor(id, name, imageUrl, price, quantity) {
         this.id = id;
         this.name = name;
