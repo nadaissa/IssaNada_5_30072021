@@ -28,7 +28,6 @@ function convertPrice(productPrice) {
     return cost;
 };
 
-
 //fetching single product and defining its display
 
 fetch(productUrl)

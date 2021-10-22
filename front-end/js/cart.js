@@ -1,16 +1,12 @@
-//getting items from local storage
-const shoppingCart = JSON.parse(localStorage.getItem('cameras'));
-
-
 //displaying shopping cart
-function productsDisplay(product) {
+function productsDisplay(productObject) {
     //const indexProduct = shoppingCart.indexOf(product);
-    const productsTable = document.querySelector("#pcontent");
+    const productsTable = document.querySelector("#productTable");
     productsTable.innerHTML += `
-    //contenu
-    ` 
+    
+    `
+ 
 };
-
 
 
 //setting input rules for form validation
@@ -37,7 +33,9 @@ const condZip = /^(?:[0-8]\d|9[0-8])\d{3}$/;
 //for address same as names but with possibility of numbers and limited to 10 characters by string
 const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
 
+//setting the contactInfo object to use later in the confirmation page
 
+    
     //setting the event listener in case of click on the submit button
     submitForm.addEventListener("click", (validate) =>{
         validate.preventDefault();
@@ -45,7 +43,6 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
     });
     
     function checkInput (){
-        //setting the contactInfo object to use later in the confirmation page
         const contactInfo = {
             firstName: document.querySelector("#firstName").value,
             lastName: document.querySelector("#lastName").value,
@@ -54,7 +51,6 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
             inputCity: document.querySelector("#inputCity").value,
             inputZip: document.querySelector("#inputZip").value,
         };
-
         //setting the loop for the successful input
         if (
             (condName.test(contactInfo.firstName) === true) &
@@ -77,16 +73,20 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
         
     //setting the function for the validation upcome
     function submitOk(){
-
             console.log("mm");
+
             /*ici mettre function de submit ou il y a la list de produit et aussi la liste des contacts et post et définir le post
             //here create product list
-            /*let products = [];
+            let products = [];
             for (listId of basket) {
                 products.push(listId.id);
             }
 
-            //here the post method
+            //the post method
+            
+
+
+            
             fetch("http://localhost:3000/api/cameras/order", {
                 method: "POST",
                 headers: {
@@ -96,12 +96,9 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
             });
                 .then((response) => response.json())
                 .then((data) => {
-                    localStorage.setItem("order", JSON.stringify(data));
-                    document.location.href = "./confirmation.html";
+                    localStorage.getItem("order", JSON.stringify(data));
+                    document.location.href = "../front-end/confirmation.html";
                 });
                 .catch((erreur) => console.log("erreur : " + erreur));*/
 
         };
-        
-
-

@@ -50,7 +50,7 @@
         <div id="pcontent" class="row" role="main">
           <div id="pcontent__wrapper" class="col justify-content-center">
             <!--products table-->
-            <table class="table table-responsive-md table-light border rounded my-3" data-toggle="table">
+            <table id="productTable" class="table table-responsive-md table-light border rounded my-3" data-toggle="table">
               <thead>
                 <tr>
                   <th scope="col">Img</th>
@@ -60,8 +60,8 @@
                   <th scope="col">Supprimer</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
+              <tbody id="cart-tablebody">
+                <!--<tr>
                   <th scope="row">1</th>
                   <td>Item 1</td>
                   <td>Item 1</td>
@@ -74,13 +74,13 @@
                   <td>Item 2</td>
                   <td>$2</td>
                   <td>X</td>
-                </tr>
+                </tr>-->
               </tbody>
               <tfoot>
                 <tr>
                   <th colspan="2"></th>
-                  <td>Sum</td>
-                  <td>$180</td>
+                  <td>Sous total</td>
+                  <td class="subtotal"></td>
                   <td></td>
                 </tr>
               </tfoot>
