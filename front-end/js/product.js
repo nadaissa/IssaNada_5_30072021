@@ -7,7 +7,6 @@ const productId = urlParams.get("_id");
 const productUrl = `http://localhost:3000/api/cameras/${productId}`;
 
 //defining the optional lenses function to be insert to the single product fetch later
-
 function lenseParam(singleProduct){
     let optionContent = '';
     for (let lense of singleProduct.lenses){
@@ -67,9 +66,12 @@ fetch(productUrl)
             </div>`
     };
     
+
+    
     //adding an item function:
     function addItem(singleProduct) {
         console.log("hello");
+        
         //create a new product object by the class productObject declared
         let newProduct = new productObject(
             productId,
