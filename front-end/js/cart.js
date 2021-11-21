@@ -62,7 +62,20 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
             (checkBox.checked === true) 
             ) {
                 //alert("bravo!");
-                submitOk();
+                //the post method
+                fetch("http://localhost:3000/api/cameras/order", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(contactInfo),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        localStorage.setItem("order", JSON.stringify(data));
+                        document.location.href = "confirmation.html";
+                    })
+                .catch((erreur) => console.log("erreur : " + erreur));
         //setting the loop for the non-successful input
         } else {   
 
@@ -72,10 +85,10 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
             
         
     //setting the function for the validation upcome
-    function submitOk(){
+    /*function submitOk(){
             console.log("mm");
 
-            /*ici mettre function de submit ou il y a la list de produit et aussi la liste des contacts et post et définir le post
+            ici mettre function de submit ou il y a la list de produit et aussi la liste des contacts et post et définir le post
             //here create product list
             let products = [];
             for (listId of basket) {
@@ -83,10 +96,6 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
             }
 
             //the post method
-            
-
-
-            
             fetch("http://localhost:3000/api/cameras/order", {
                 method: "POST",
                 headers: {
@@ -96,9 +105,9 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
             });
                 .then((response) => response.json())
                 .then((data) => {
-                    localStorage.getItem("order", JSON.stringify(data));
-                    document.location.href = "../front-end/confirmation.html";
+                    localStorage.setItem("order", JSON.stringify(data));
+                    document.location.href = "https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage";
                 });
-                .catch((erreur) => console.log("erreur : " + erreur));*/
+                .catch((erreur) => console.log("erreur : " + erreur));
 
-        };
+        };*/

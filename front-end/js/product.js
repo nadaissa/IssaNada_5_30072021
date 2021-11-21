@@ -28,14 +28,17 @@ function convertPrice(productPrice) {
     return cost;
 };
 
+
+
+
 //fetching single product and defining its display
 
 fetch(productUrl)
     .then((response) => response.json())
     .then((data) => {
         displayProduct(data);
+        //addItem(data);
     })
-
     //the error catch
     .catch(function(error) {
         console.log('Il y a eu un problème: ' + error.message);
@@ -58,15 +61,44 @@ fetch(productUrl)
                                 <span class="my-1">Prix</span>
                                 <span class="my-1">${convertPrice(singleProduct.price)}</span>                        
                                 </p>
-                        <a href="#" class="add_btn btn btn-primary btn-dark font-weight-bold my-2">Ajouter au panier</a>
+                        <button id="addToCartBtn" class="add_btn btn btn-primary btn-dark font-weight-bold my-2" onclick="{addItem()}">Ajouter au panier</button>
                     </div>
             </div>
             </div>`
     };
+    
+    //adding an item function:
+    function addItem(singleProduct) {
+        console.log("hello");
+        //create a new product object by the class productObject declared
+        let newProduct = new productObject(
+            productId,
+            singleProduct.name,
+            singleProduct.imageUrl,
+            singleProduct.price,
+            singleProduct.quantity,
+        );
 
-//defining the function to add items to the shopping cart
-
-
-     
-
-     
+        //check if product is there or not
+        //if yes let alreadyAdded be true and keep it in the localStorage
+        let isAlreadyAdded = false;
+        let modifyingIndex;
+        for (allProducts of cartContent) {
+            switch(newProduct.productId) {
+                case allProducts.productId:
+                    isAlreadyAdded = true;
+                    modifyingIndex = cartContent.indexOf(allProducts);
+                    //products index is to be defined in the cart page ([])
+            };
+        };
+        
+            //and then add quantity
+            if(isAlreadyAdded){
+                cartContent[modifyingIndex].quantity ++;
+                localStorage.setItem("cameras", JSON.stringify(cartContent));
+            //if not add the product
+            }else{
+                cartContent.push(newProduct);
+                localStorage.setItem("cameras", JSON.stringify(cartContent));
+            };    
+    };   
