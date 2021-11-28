@@ -84,7 +84,7 @@ fetch(productUrl)
             name: productIn.name,
             imageUrl: productIn.imageUrl,
             price: productIn.price,
-            quantity: 0, //problème parce que jn'ai la qt que dans le panier
+            quantity: 0,
         };
         
         //check if product is there or not
@@ -113,4 +113,5 @@ fetch(productUrl)
         });
     };
 
+    
     

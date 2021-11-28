@@ -1,6 +1,9 @@
+
+
+
 //displaying shopping cart
 function cartDisplay(product) {
-    const indexProduct = cartContent.indexOf(product);
+    const indexProduct = cartStorage.indexOf(product);
     const productsTable = document.querySelector("#productTable");
     productsTable.innerHTML += `
             <thead>

@@ -28,6 +28,9 @@ mWrapper.style.cssText =
             for(i of navLinks){
                 i.style.color="#E78B06";
             };
+        
+        const cartBadge = document.getElementById("numProdsInCart");
+        cartBadge.style.cssText = "font-size: xx-small";
 
     //intro style
     const jumbotron = document.getElementById("intro__jumbotron");
