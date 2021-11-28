@@ -1,6 +1,3 @@
-//localStorage call for shopping cart content
-const cartContent = JSON.parse(localStorage.getItem("cameras"));
-
 //displaying shopping cart
 function cartDisplay(product) {
     const indexProduct = cartContent.indexOf(product);

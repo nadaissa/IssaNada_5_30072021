@@ -1,7 +1,9 @@
 //query parameter url
 const urlParams = new URLSearchParams(location.search);
 const productId = urlParams.get("_id");
-//const tableOption = urlParams.get("lenses"); 
+//const tableOption = urlParams.get("lenses");
+
+
 
 //url constant with id parameter
 const productUrl = `http://localhost:3000/api/cameras/${productId}`;
@@ -28,20 +30,23 @@ function convertPrice(productPrice) {
 };
 
 
+//let productTable = [];
 
-
-//fetching single product and defining its display
+//fetching single product and defining its display and its add-to-cart method
 
 fetch(productUrl)
     .then((response) => response.json())
     .then((data) => {
+        //productTable.push(data);
         displayProduct(data);
-        //addItem(data);
+        addItem(data);    
     })
     //the error catch
     .catch(function(error) {
         console.log('Il y a eu un problème: ' + error.message);
     });
+    //console.log(productTable[0]._id + "test");
+    
 
     function displayProduct(singleProduct){    
         const productDiv = document.querySelector("#pcontent");
@@ -60,7 +65,7 @@ fetch(productUrl)
                                 <span class="my-1">Prix</span>
                                 <span class="my-1">${convertPrice(singleProduct.price)}</span>                        
                                 </p>
-                        <button id="addToCartBtn" class="add_btn btn btn-primary btn-dark font-weight-bold my-2" onclick="{addItem()}">Ajouter au panier</button>
+                        <button id="addToCartBtn" class="add_btn btn btn-primary btn-dark font-weight-bold my-2">Ajouter au panier</button>
                     </div>
             </div>
             </div>`
@@ -69,38 +74,43 @@ fetch(productUrl)
 
     
     //adding an item function:
-    function addItem(singleProduct) {
-        console.log("hello");
+    function addItem(productIn) {
+        const addBtn = document.querySelector("#addToCartBtn");
+        addBtn.addEventListener("click", (addEvent) => {
+            addEvent.preventDefault();
         
-        //create a new product object by the class productObject declared
-        let newProduct = new productObject(
-            productId,
-            singleProduct.name,
-            singleProduct.imageUrl,
-            singleProduct.price,
-            singleProduct.quantity,
-        );
-
+        //create a product object
+        const productObject = {
+            id: productIn._id,
+            name: productIn.name,
+            imageUrl: productIn.imageUrl,
+            price: productIn.price,
+            //quantity: quantity.value, //problème parce que jn'ai la qt que dans le panier
+        };
+        console.log("hello", productObject);
+               
         //check if product is there or not
         //if yes let alreadyAdded be true and keep it in the localStorage
-        let isAlreadyAdded = false;
-        let modifyingIndex;
-        for (allProducts of cartContent) {
-            switch(newProduct.productId) {
-                case allProducts.productId:
-                    isAlreadyAdded = true;
-                    modifyingIndex = cartContent.indexOf(allProducts);
+        let alreadyAdded = false;
+        let returnFromIndex;
+        for (specificProd of cartStorage) {
+            switch(productObject) {
+                case specificProd.id:
+                    alreadyAdded = true;
+                    returnFromIndex = cartStorage.indexOf(specificProd);
                     //products index is to be defined in the cart page ([])
             };
         };
         
             //and then add quantity
-            if(isAlreadyAdded){
-                cartContent[modifyingIndex].quantity ++;
-                localStorage.setItem("cameras", JSON.stringify(cartContent));
+            if(alreadyAdded){
+                cartStorage[returnFromIndex].quantity = 
+                    +cartStorage[returnFromIndex].quantity + +productObject.quantity;
+                localStorage.setItem("cameras", JSON.stringify(cartStorage));
             //if not add the product
             }else{
-                cartContent.push(newProduct);
-                localStorage.setItem("cameras", JSON.stringify(cartContent));
-            };    
-    };   
+                cartStorage.push(productObject);
+                localStorage.setItem("cameras", JSON.stringify(cartStorage));
+            }; 
+        });
+    };
