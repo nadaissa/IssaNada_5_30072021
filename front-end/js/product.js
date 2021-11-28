@@ -78,17 +78,15 @@ fetch(productUrl)
         const addBtn = document.querySelector("#addToCartBtn");
         addBtn.addEventListener("click", (addEvent) => {
             addEvent.preventDefault();
-        
         //create a product object
         const productObject = {
             id: productIn._id,
             name: productIn.name,
             imageUrl: productIn.imageUrl,
             price: productIn.price,
-            //quantity: quantity.value, //problème parce que jn'ai la qt que dans le panier
+            quantity: 0, //problème parce que jn'ai la qt que dans le panier
         };
-        console.log("hello", productObject);
-               
+        
         //check if product is there or not
         //if yes let alreadyAdded be true and keep it in the localStorage
         let alreadyAdded = false;
@@ -114,3 +112,5 @@ fetch(productUrl)
             }; 
         });
     };
+
+    
