@@ -1,24 +1,13 @@
-
-
-
-//displaying shopping cart
-function cartDisplay(product) {
-    const indexProduct = cartStorage.indexOf(product);
-    const productsTable = document.querySelector("#productTable");
-    productsTable.innerHTML += `
-            <thead>
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Nom</th>
-                  <th scope="col">Quantité</th>
-                  <th scope="col">Prix</th>
-                  <th scope="col">Supprimer</th>
-                </tr>
-            </thead>
-            <tbody id="cart-tablebody">
+if (cartStorage.lenght < 1){
+    console.log("rien ici");
+}else{
+    for(product of cartStorage){
+        const indexProduct = cartStorage.indexOf(product);
+        const productsTable = document.querySelector("#cart-tablebody");
+        productsTable.innerHTML += `
                 <tr>
                     <th scope="row">
-                        <img src="${product.imgUrl}" class="img-fluid img-thumbnail" alt="${product.name}">
+                        <img src="${product.imageUrl}" class="img-fluid img-thumbnail" alt="${product.name}">
                     </th>
                     <td>
                         <span>${product.name}</span>
@@ -36,8 +25,6 @@ function cartDisplay(product) {
                         <span>${convertPrice(product.price)}</span>
                     </td>
                 </tr>
-            </tbody>
-            <tfoot>
                 <tr>
                     <th colspan="2"></th>
                     <td>Sous total</td>
@@ -45,15 +32,13 @@ function cartDisplay(product) {
                         <span>${convertPrice(product.quantity * product.price)}</span>
                     </td>
                     <td></td>
-                </tr>
-            </tfoot>
-            <!--end of products table-->
-            <div class="col d-flex align-items-center justify-content-center my-4">
-              <button type="button" class="btn btn-danger m-1">Vider le panier</button>
-            </div>
+                </tr>            
     `
- 
+    };
 };
+
+
+
 
 
 //setting input rules for form validation

@@ -18,17 +18,6 @@ function lenseParam(singleProduct){
 
 };
 
-//defining the price converting function to be insert to the single product fetch later
-function convertPrice(productPrice) {
-    let cost = `${productPrice}`;
-    cost = Intl.NumberFormat("fr-FR", {
-        style: "currency",
-        currency: "EUR",
-        minimumFractionDigits: 2,
-    }).format(cost / 100);
-    return cost;
-};
-
 
 //let productTable = [];
 
