@@ -7,12 +7,12 @@ if (cartStorage.lenght < 1){
         productsTable.innerHTML += `
                 <tr>
                     <th scope="row">
-                        <img src="${product.imageUrl}" class="img-fluid img-thumbnail" alt="${product.name}">
+                        <img src="${product.imageUrl}" class="img-fluid img-thumbnail w-25" alt="${product.name}">
                     </th>
-                    <td>
+                    <td class="w-25">
                         <span>${product.name}</span>
                     </td>
-                    <td>
+                    <td class="w-25">
                         <button type="button" class="rounded minus data-toggle="modal" data-target="#exampleModal" data-index="${indexProduct}">
                             <span class="fas fa-minus-square text-danger" data-index="${indexProduct}"></span>
                         </button>
@@ -20,8 +20,11 @@ if (cartStorage.lenght < 1){
                         <button type="button" class="rounded plus" data-toggle="modal" data-target="#exampleModal" data-index="${indexProduct}">
                             <span class="fas fa-plus-square text-success" data-index="${indexProduct}"></span>
                         </button>
+                        <button type="button" class="rounded plus" data-toggle="modal" data-target="#exampleModal" data-index="${indexProduct}">
+                            <span class="fas fa-trash-alt text-danger" data-index="${indexProduct}"></span>
+                        </button>
                     </td>
-                    <td> 
+                    <td class="w-25"> 
                         <span>${convertPrice(product.price)}</span>
                     </td>
                 </tr>
@@ -38,7 +41,8 @@ if (cartStorage.lenght < 1){
 };
 
 
-
+//Clear cart
+//function 
 
 
 //setting input rules for form validation
