@@ -73,21 +73,31 @@ fetch(productUrl)
             name: productIn.name,
             imageUrl: productIn.imageUrl,
             price: productIn.price,
-            quantity: 0,
+            quantity: 1
         };
+        //console.log(productObject);
         
         //check if product is there or not
         //if yes let alreadyAdded be true and keep it in the localStorage
         let alreadyAdded = false;
         let returnFromIndex;
         for (specificProd of cartStorage) {
-            switch(productObject) {
+            if(specificProd.id === productObject.id){
+                alreadyAdded = true;
+                returnFromIndex = cartStorage.indexOf(specificProd);
+                console.log("hello", returnFromIndex);
+
+            };
+            /*switch(productObject) {
                 case specificProd.id:
                     alreadyAdded = true;
                     returnFromIndex = cartStorage.indexOf(specificProd);
                     //products index is to be defined in the cart page ([])
+                    console.log("test", returnFromIndex);
+                };
+
+                break;*/
             };
-        };
         
             //and then add quantity
             if(alreadyAdded){
@@ -101,6 +111,9 @@ fetch(productUrl)
             }; 
         });
     };
+
+    //localStorage.clear();
+
 
     
     
