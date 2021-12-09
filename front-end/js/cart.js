@@ -17,7 +17,7 @@ if (cartStorage.lenght < 1){
                         <span type="button" class="fas fa-plus-square" data-index="${indexProduct}"></span>
                     </td>
                     <td class="w-25"> 
-                        <span>${convertPrice(product.quantity * product.price)}</span><br>
+                        <span id="totalItem">${convertPrice(product.quantity * product.price)}</span><br>
                         <span class="fas fa-trash-alt" data-index="${indexProduct}"></span>
                     </td>
                 </tr>            
@@ -26,8 +26,21 @@ if (cartStorage.lenght < 1){
 };
 
 //Setting the function for total sum of the shopcart
-//const totalCart = document.querySelector("#total-cart");
-    
+const totalCart = document.querySelector("#total-cart");
+totalCart.innerHTML +=
+        `<td>Total Panier</td>
+        <td></td>
+        <td>${calculation()}</td>`;    
+
+function calculation(){
+    let totalCalcul = 0;
+    cartStorage.forEach((product) => {
+        totalCalcul = totalCalcul + product.price * product.quantity;
+        console.log(totalCalcul);
+    });
+};
+
+
 
 
 //Clear cart

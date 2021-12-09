@@ -57,7 +57,7 @@ mWrapper.style.cssText =
 
 //shopping cart styling rules
 const cartTable = document.getElementById("productTable");
-        cartTable.style.cssText = 
+        cartTable.style.cssText =
         "color: #ffffff; background: #2E2E2E";
 
 const minusBtn = document.getElementsByClassName("fa-minus-square");
