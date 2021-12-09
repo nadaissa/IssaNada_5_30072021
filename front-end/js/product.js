@@ -88,15 +88,6 @@ fetch(productUrl)
                 console.log("hello", returnFromIndex);
 
             };
-            /*switch(productObject) {
-                case specificProd.id:
-                    alreadyAdded = true;
-                    returnFromIndex = cartStorage.indexOf(specificProd);
-                    //products index is to be defined in the cart page ([])
-                    console.log("test", returnFromIndex);
-                };
-
-                break;*/
             };
         
             //and then add quantity
@@ -111,8 +102,6 @@ fetch(productUrl)
             }; 
         });
     };
-
-    //localStorage.clear();
 
 
     

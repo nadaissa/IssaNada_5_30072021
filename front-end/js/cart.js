@@ -1,24 +1,28 @@
-if (cartStorage.lenght < 1){
-    console.log("rien ici");
+if (cartStorage == 0){
+    let productsTable = document.querySelector("#cart-tablebody");
+    productsTable.innerHTML += `
+                <tr>
+                <td colspan="3" class="text-center font-weight-bold"> Votre panier est vide</td>
+                </tr>
+    `;
 }else{
     for(product of cartStorage){
         const indexProduct = cartStorage.indexOf(product);
-        const productsTable = document.querySelector("#cart-tablebody");
+        let productsTable = document.querySelector("#cart-tablebody");
         productsTable.innerHTML += `
-                <tr>
-                    
+                <tr>                    
                     <td>
                         <img src="${product.imageUrl}" class="img-fluid img-thumbnail w-50" alt="${product.name}"><br>                    
                         <span> ${product.name}</span>
                     </td>
                     <td class="w-25">
-                        <span type="button" class="fas fa-minus-square" data-index="${indexProduct}"></span>
+                        <span type="button" id="removeMinus" class="fas fa-minus-square" data-index="${indexProduct}"></span>
                         <span class="mx-0 mx-lg-3"> ${product.quantity}</span>
-                        <span type="button" class="fas fa-plus-square" data-index="${indexProduct}"></span>
+                        <span type="button" id="addPlus" class="fas fa-plus-square" data-index="${indexProduct}"></span>
                     </td>
                     <td class="w-25"> 
                         <span id="totalItem">${convertPrice(product.quantity * product.price)}</span><br>
-                        <span class="fas fa-trash-alt" data-index="${indexProduct}"></span>
+                        <span id="deleteTrash" class="fas fa-trash-alt" data-index="${indexProduct}"></span>
                     </td>
                 </tr>            
     `
@@ -40,7 +44,12 @@ function calculation(){
     });
 };
 
-
+//add item by plus button
+let addWPlus = document.querySelector("#addPlus");
+addWPlus.addEventListener("click", (adding) =>{
+    adding.preventDefault();
+    console.log("add?");
+});
 
 
 //Clear cart
@@ -126,30 +135,3 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
     };        
             
         
-    //setting the function for the validation upcome
-    /*function submitOk(){
-            console.log("mm");
-
-            ici mettre function de submit ou il y a la list de produit et aussi la liste des contacts et post et définir le post
-            //here create product list
-            let products = [];
-            for (listId of basket) {
-                products.push(listId.id);
-            }
-
-            //the post method
-            fetch("http://localhost:3000/api/cameras/order", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(contactInfo),
-            });
-                .then((response) => response.json())
-                .then((data) => {
-                    localStorage.setItem("order", JSON.stringify(data));
-                    document.location.href = "https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage";
-                });
-                .catch((erreur) => console.log("erreur : " + erreur));
-
-        };*/
