@@ -6,41 +6,27 @@ if (cartStorage.lenght < 1){
         const productsTable = document.querySelector("#cart-tablebody");
         productsTable.innerHTML += `
                 <tr>
-                    <th scope="row">
-                        <img src="${product.imageUrl}" class="img-fluid img-thumbnail w-25" alt="${product.name}">
-                    </th>
-                    <td class="w-25">
-                        <span>${product.name}</span>
+                    
+                    <td>
+                        <img src="${product.imageUrl}" class="img-fluid img-thumbnail w-50" alt="${product.name}"><br>                    
+                        <span> ${product.name}</span>
                     </td>
                     <td class="w-25">
-                        <button type="button" class="rounded minus data-toggle="modal" data-target="#exampleModal" data-index="${indexProduct}">
-                            <span class="fas fa-minus-square text-danger" data-index="${indexProduct}"></span>
-                        </button>
+                        <span type="button" class="fas fa-minus-square text-danger" data-index="${indexProduct}"></span>
                         <span class="mx-0 mx-lg-3"> ${product.quantity}</span>
-                        <button type="button" class="rounded plus" data-toggle="modal" data-target="#exampleModal" data-index="${indexProduct}">
-                            <span class="fas fa-plus-square text-success" data-index="${indexProduct}"></span>
-                        </button>
-                        <button type="button" class="rounded plus" data-toggle="modal" data-target="#exampleModal" data-index="${indexProduct}">
-                            <span class="fas fa-trash-alt text-danger" data-index="${indexProduct}"></span>
-                        </button>
+                        <span type="button" class="fas fa-plus-square text-success" data-index="${indexProduct}"></span>
                     </td>
                     <td class="w-25"> 
-                        <span>${convertPrice(product.price)}</span>
+                        <span>${convertPrice(product.quantity * product.price)}</span><br>
+                        <span class="fas fa-trash-alt text-danger" data-index="${indexProduct}"></span>
                     </td>
-                </tr>
-                <tr>
-                    <th colspan="2"></th>
-                    <td>Sous total</td>
-                    <td class="subtotal">
-                        <span>${convertPrice(product.quantity * product.price)}</span>
-                    </td>
-                    <td></td>
                 </tr>            
     `
     };
 };
 
-
+//Setting the function for total sum of the shopcart
+//id of the column : total-cart
 //Clear cart
 //function 
 

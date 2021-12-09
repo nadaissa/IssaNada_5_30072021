@@ -56,15 +56,20 @@
             <table id="productTable" class="table table-responsive-md table-light border rounded my-3" data-toggle="table">
               <thead>
                 <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Nom</th>
+                  <th scope="col">Produit</th>
                   <th scope="col">Quantité</th>
                   <th scope="col">Prix</th>
                 </tr>
               </thead>
               <tbody id="cart-tablebody">
                 <!--js content-->
-              </tbody>            
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total Panier</td>
+                  <td id="total-cart"></td>
+                </tr>
+              </tfoot>            
             </table>
             <!--end of products table-->
             <div class="col d-flex align-items-center justify-content-center my-4">
