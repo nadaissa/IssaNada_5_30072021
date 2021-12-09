@@ -26,9 +26,16 @@ if (cartStorage.lenght < 1){
 };
 
 //Setting the function for total sum of the shopcart
-//id of the column : total-cart
+//const totalCart = document.querySelector("#total-cart");
+    
+
+
 //Clear cart
-//function 
+const emptyCart = document.querySelector("#emptyCart");
+emptyCart.addEventListener('click', (empty) =>{
+    empty.preventDefault();
+    localStorage.clear();
+});
 
 
 //setting input rules for form validation

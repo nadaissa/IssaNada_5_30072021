@@ -78,8 +78,8 @@ const deleteIcon = document.getElementsByClassName("fa-trash-alt");
     "color: #CD5C5C";
     };
 
-const emptyCart = document.getElementById("emptyCart");
-    emptyCart.style.background = "#CD5C5C";
+const deleteAll = document.getElementById("emptyCart");
+    deleteAll.style.background = "#CD5C5C";
 
 const submitBtn = document.getElementById("submitBtn");
     submitBtn.style.background = "#E78B06";
