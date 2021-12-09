@@ -42,7 +42,6 @@ mWrapper.style.cssText =
                 i.style.cssText=
                 "font-size: 2rem; font-weight: bold; margin-top: 10px;"
             };
-
     
     //footer style
     const footer = document.querySelector("footer");
@@ -55,3 +54,33 @@ mWrapper.style.cssText =
                 };
 
 //end of common display rules
+
+//shopping cart styling rules
+const cartTable = document.getElementById("productTable");
+        cartTable.style.cssText = 
+        "color: #ffffff; background: #2E2E2E";
+
+const minusBtn = document.getElementsByClassName("fa-minus-square");
+    for(i of minusBtn) {
+        i.style.cssText = 
+        "color: #8F5BFE";
+    };
+    
+const plusBtn = document.getElementsByClassName("fa-plus-square");
+    for(i of plusBtn) {
+        i.style.cssText = 
+    "color: #E78B06";
+    };
+
+const deleteIcon = document.getElementsByClassName("fa-trash-alt");
+    for(i of deleteIcon) {
+        i.style.cssText = 
+    "color: #CD5C5C";
+    };
+
+const emptyCart = document.getElementById("emptyCart");
+    emptyCart.style.background = "#CD5C5C";
+
+const submitBtn = document.getElementById("submitBtn");
+    submitBtn.style.background = "#E78B06";
+//end of shopping cart styling rules

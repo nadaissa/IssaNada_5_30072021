@@ -12,13 +12,13 @@ if (cartStorage.lenght < 1){
                         <span> ${product.name}</span>
                     </td>
                     <td class="w-25">
-                        <span type="button" class="fas fa-minus-square text-danger" data-index="${indexProduct}"></span>
+                        <span type="button" class="fas fa-minus-square" data-index="${indexProduct}"></span>
                         <span class="mx-0 mx-lg-3"> ${product.quantity}</span>
-                        <span type="button" class="fas fa-plus-square text-success" data-index="${indexProduct}"></span>
+                        <span type="button" class="fas fa-plus-square" data-index="${indexProduct}"></span>
                     </td>
                     <td class="w-25"> 
                         <span>${convertPrice(product.quantity * product.price)}</span><br>
-                        <span class="fas fa-trash-alt text-danger" data-index="${indexProduct}"></span>
+                        <span class="fas fa-trash-alt" data-index="${indexProduct}"></span>
                     </td>
                 </tr>            
     `
