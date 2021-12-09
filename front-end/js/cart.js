@@ -1,4 +1,4 @@
-if (cartStorage == 0){
+if (cartStorage === 0){
     let productsTable = document.querySelector("#cart-tablebody");
     productsTable.innerHTML += `
                 <tr>
