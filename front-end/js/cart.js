@@ -42,6 +42,7 @@ function calculation(){
         totalCalcul = totalCalcul + product.price * product.quantity;
         console.log(totalCalcul);
     });
+    return convertPrice(totalCalcul);
 };
 
 //add item by plus button
