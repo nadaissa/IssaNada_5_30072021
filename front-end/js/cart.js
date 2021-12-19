@@ -20,10 +20,11 @@ if (cartStorage == 0){
                         <span class="mx-0 mx-lg-3"> ${product.quantity}</span>
                         <span type="button" class="fas fa-plus-square addPlus" data-index="${indexProduct}"></span>
                     </td>
-                    <td class="w-25"> 
-                        <span id="totalItem">${convertPrice(product.quantity * product.price)}</span><br>
+                    <td class="w-50"> 
+                        <span id="totalItem">${convertPrice(product.quantity * product.price)}</span>
                         <span class="fas fa-trash-alt deleteTrash" data-index="${indexProduct}"></span>
                     </td>
+                        
                 </tr>            
     `
     };

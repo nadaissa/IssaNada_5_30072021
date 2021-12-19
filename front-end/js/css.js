@@ -58,7 +58,7 @@ mWrapper.style.cssText =
 //shopping cart styling rules
 const cartTable = document.getElementById("productTable");
         cartTable.style.cssText =
-        "color: #ffffff; background: #2E2E2E";
+        "color: #ffffff; background: #2E2E2E; max-width: 700px;";
 
 const minusBtn = document.getElementsByClassName("fa-minus-square");
     for(i of minusBtn) {
@@ -75,7 +75,7 @@ const plusBtn = document.getElementsByClassName("fa-plus-square");
 const deleteIcon = document.getElementsByClassName("fa-trash-alt");
     for(i of deleteIcon) {
         i.style.cssText = 
-    "color: #CD5C5C";
+    "color: #CD5C5C; margin-left: 10px";
     };
 
 const deleteAll = document.getElementById("emptyCart");
