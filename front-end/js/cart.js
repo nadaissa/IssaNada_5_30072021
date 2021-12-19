@@ -12,8 +12,10 @@ if (cartStorage == 0){
         productsTable.innerHTML += `
                 <tr>                    
                     <td>
-                        <img src="${product.imageUrl}" class="img-fluid img-thumbnail w-50" alt="${product.name}"><br>                    
-                        <span> ${product.name}</span>
+                        <a href="../front-end/product.html?_id=${product.id}" class="text-light">  
+                            <img src="${product.imageUrl}" class="img-fluid img-thumbnail w-50" alt="${product.name}"><br>                    
+                            <span> ${product.name}</span>
+                        </a>  
                     </td>
                     <td class="w-25">
                         <span type="button" class="fas fa-minus-square removeMinus" data-index="${indexProduct}"></span>
