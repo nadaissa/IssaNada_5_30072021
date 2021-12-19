@@ -55,6 +55,7 @@ mWrapper.style.cssText =
 
 //end of common display rules
 
+
 //shopping cart styling rules
 const cartTable = document.getElementById("productTable");
         cartTable.style.cssText =

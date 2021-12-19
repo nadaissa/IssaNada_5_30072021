@@ -26,3 +26,15 @@ class productObject{
 };
 
 
+//
+const totalBadge = document.querySelector("#numProdsInCart");
+totalBadge.innerHTML +=
+        `<span>${badge()}</span>`;    
+
+function badge(){
+    let totalIn = 0;
+    cartStorage.forEach((item) => {
+        totalIn = totalIn + item.quantity;
+    });
+    return totalIn;  
+};

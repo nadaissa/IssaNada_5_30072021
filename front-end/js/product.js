@@ -40,7 +40,7 @@ fetch(productUrl)
     function displayProduct(singleProduct){    
         const productDiv = document.querySelector("#pcontent");
             productDiv.innerHTML += 
-            `<div class="col-sm">
+            `<div class="col productCard">
             <div class="card mt-4">
                     <img class="card-img-top" src="${singleProduct.imageUrl}" alt="Card image cap">
                     <div class="card-body">
@@ -85,6 +85,7 @@ fetch(productUrl)
                 alreadyAdded = true;
                 returnFromIndex = cartStorage.indexOf(specificProd);
                 console.log("hello", returnFromIndex);
+                location.reload();
 
             };
             };
@@ -94,12 +95,16 @@ fetch(productUrl)
                 cartStorage[returnFromIndex].quantity = 
                     +cartStorage[returnFromIndex].quantity + +productToCart.quantity;
                 localStorage.setItem("cameras", JSON.stringify(cartStorage));
+                location.reload();
             //if not add the product
             }else{
                 cartStorage.push(productToCart);
                 localStorage.setItem("cameras", JSON.stringify(cartStorage));
+                location.reload();
             }; 
         });
+
+        
     };
 
 
