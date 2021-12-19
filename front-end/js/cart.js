@@ -16,13 +16,13 @@ if (cartStorage == 0){
                         <span> ${product.name}</span>
                     </td>
                     <td class="w-25">
-                        <span type="button" id="removeMinus" class="fas fa-minus-square" data-index="${indexProduct}"></span>
+                        <span type="button" class="fas fa-minus-square removeMinus" data-index="${indexProduct}"></span>
                         <span class="mx-0 mx-lg-3"> ${product.quantity}</span>
-                        <span type="button" id="addPlus" class="fas fa-plus-square" data-index="${indexProduct}"></span>
+                        <span type="button" class="fas fa-plus-square addPlus" data-index="${indexProduct}"></span>
                     </td>
                     <td class="w-25"> 
                         <span id="totalItem">${convertPrice(product.quantity * product.price)}</span><br>
-                        <span id="deleteTrash" class="fas fa-trash-alt" data-index="${indexProduct}"></span>
+                        <span class="fas fa-trash-alt deleteTrash" data-index="${indexProduct}"></span>
                     </td>
                 </tr>            
     `
@@ -45,12 +45,47 @@ function calculation(){
     return convertPrice(totalCalcul);
 };
 
+//Note for indexRef: defining the indexation property for adding and removing products -
+//by targeting data-index attribute in innerHtml content here above
+
 //add item by plus button
-/*let addWPlus = document.querySelector("#addPlus");
-addWPlus.addEventListener("click", (adding) =>{
-    adding.preventDefault();
-    console.log("add?");
-});*/
+let addWPlus = document.getElementsByClassName("addPlus");
+for (adding of addWPlus) {
+    adding.addEventListener("click", (event) => {
+    let indexRef = event.target.getAttribute("data-index");
+    cartStorage[indexRef].quantity++;
+    localStorage.setItem("cameras", JSON.stringify(cartStorage));
+    location.reload();
+    });
+};
+
+//remove item by minus button
+let remWMinus = document.getElementsByClassName("removeMinus");
+for (removing of remWMinus) {
+    removing.addEventListener("click", (event) => {
+        let indexRef = event.target.getAttribute("data-index");
+        //prevent clicking on minus button if the item quantity is 1
+        if (cartStorage[indexRef].quantity === 1){
+            remWMinus.disabled = true;
+        //remove one item with the minus button if the quantity more than 1    
+        }else{
+            cartStorage[indexRef].quantity--;
+        }
+        localStorage.setItem("cameras", JSON.stringify(cartStorage));
+        location.reload();
+    });
+};
+
+//deleting individual item
+let dltWTrash = document.getElementsByClassName("deleteTrash");
+for (deleting of dltWTrash){
+    deleting.addEventListener("click", (event) => {
+        let indexRef = event.target.getAttribute("data-index");
+        cartStorage.splice(indexRef, 1);
+        localStorage.setItem("cameras", JSON.stringify(cartStorage));
+        location.reload();
+    });
+};
 
 
 //Clear cart
@@ -58,6 +93,7 @@ const emptyCart = document.querySelector("#emptyCart");
 emptyCart.addEventListener('click', (empty) =>{
     empty.preventDefault();
     localStorage.clear();
+    location.reload();
 });
 
 
