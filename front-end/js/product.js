@@ -68,21 +68,20 @@ fetch(productUrl)
         addBtn.addEventListener("click", (addEvent) => {
             addEvent.preventDefault();
         //create a product object
-        const productObject = {
-            id: productIn._id,
-            name: productIn.name,
-            imageUrl: productIn.imageUrl,
-            price: productIn.price,
-            quantity: 1
-        };
-        //console.log(productObject);
+        const productToCart = new productObject (
+            productId,
+            productIn.name,
+            productIn.imageUrl,
+            productIn.price,
+            quantity = 1
+        );
         
         //check if product is there or not
         //if yes let alreadyAdded be true and keep it in the localStorage
         let alreadyAdded = false;
         let returnFromIndex;
         for (specificProd of cartStorage) {
-            if(specificProd.id === productObject.id){
+            if(specificProd.id === productToCart.id){
                 alreadyAdded = true;
                 returnFromIndex = cartStorage.indexOf(specificProd);
                 console.log("hello", returnFromIndex);
@@ -93,11 +92,11 @@ fetch(productUrl)
             //and then add quantity
             if(alreadyAdded){
                 cartStorage[returnFromIndex].quantity = 
-                    +cartStorage[returnFromIndex].quantity + +productObject.quantity;
+                    +cartStorage[returnFromIndex].quantity + +productToCart.quantity;
                 localStorage.setItem("cameras", JSON.stringify(cartStorage));
             //if not add the product
             }else{
-                cartStorage.push(productObject);
+                cartStorage.push(productToCart);
                 localStorage.setItem("cameras", JSON.stringify(cartStorage));
             }; 
         });

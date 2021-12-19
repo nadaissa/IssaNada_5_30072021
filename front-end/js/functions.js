@@ -14,8 +14,8 @@ function convertPrice(productPrice) {
 };
 
 
-//class to be used to add products to the shopping cart
-/*class productObject{
+//class to be used to add products to the shopping cart and modify products quantity in cart
+class productObject{
     constructor(id, name, imageUrl, price, quantity) {
         this.id = id;
         this.name = name;
@@ -23,6 +23,6 @@ function convertPrice(productPrice) {
         this.price = price;
         this.quantity = quantity;        
     };
-};*/
+};
 
 

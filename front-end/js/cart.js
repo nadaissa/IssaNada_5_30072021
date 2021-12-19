@@ -1,4 +1,4 @@
-if (cartStorage === 0){
+if (cartStorage == 0){
     let productsTable = document.querySelector("#cart-tablebody");
     productsTable.innerHTML += `
                 <tr>
@@ -46,11 +46,11 @@ function calculation(){
 };
 
 //add item by plus button
-let addWPlus = document.querySelector("#addPlus");
+/*let addWPlus = document.querySelector("#addPlus");
 addWPlus.addEventListener("click", (adding) =>{
     adding.preventDefault();
     console.log("add?");
-});
+});*/
 
 
 //Clear cart
