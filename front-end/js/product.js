@@ -42,22 +42,37 @@ fetch(productUrl)
             productDiv.innerHTML += 
             `<div class="col productCard">
             <div class="card mt-4">
-                    <img class="card-img-top" src="${singleProduct.imageUrl}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title font-weight-bold">${singleProduct.name}</h5>
-                        <p class="card-text">${singleProduct.description}</p>
-                        <select class="custom-select my-2">
-                                <option >Modèles</option>
-                                ${lenseParam(singleProduct)}                                                      
-                        </select>
-                        <p id="price_tag" class="card-text font-weight-bold text-right my-2">
-                                <span class="my-1">Prix</span>
-                                <span class="my-1">${convertPrice(singleProduct.price)}</span>                        
-                                </p>
-                        <button id="addToCartBtn" class="add_btn btn btn-primary btn-dark font-weight-bold my-2">Ajouter au panier</button>
+                <img class="card-img-top img-fluid " src="${singleProduct.imageUrl}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">${singleProduct.name}</h5>
+                    <p class="card-text">${singleProduct.description}</p>
+                    <select class="custom-select my-2">
+                        <option >Modèles</option>
+                        ${lenseParam(singleProduct)}                                                      
+                    </select>
+                    <p id="price_tag" class="card-text font-weight-bold text-right my-2">
+                        <span class="my-1">Prix</span>
+                        <span class="my-1">${convertPrice(singleProduct.price)}</span>                        
+                    </p>
+                    <button id="addToCartBtn" class="add_btn btn btn-primary btn-dark font-weight-bold my-2">Ajouter au panier</button>
+                    <div class="toast show font-weight-bold " id="addedToast">
+                        <div class="toast-header">
+                            <strong class="mr-auto">Produit ajouté!</strong>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" id="closeToast">&times;</button>
+                        </div>
+                        <div class="toast-body">
+                            <a id="nav__cart-icon" class="nav-link" href="cart.html" aria-label="icon panier">
+                                <span class="fas fa-shopping-basket"></span>
+                                => Aller au panier
+                            </a>
+                            <a id="nav__home-icon" class="nav-link" href="../index.html" aria-label="icon accueil">
+                                <span class="fas fa-home"></span>
+                            <= Retourner aux produits </a>
+                        </div>
                     </div>
+                </div>                    
             </div>
-            </div>`
+        </div>`
     };
     
 
@@ -84,9 +99,7 @@ fetch(productUrl)
             if(specificProd.id === productToCart.id){
                 alreadyAdded = true;
                 returnFromIndex = cartStorage.indexOf(specificProd);
-                console.log("hello", returnFromIndex);
-                location.reload();
-
+                //console.log("hello", returnFromIndex);
             };
             };
         
@@ -95,15 +108,20 @@ fetch(productUrl)
                 cartStorage[returnFromIndex].quantity = 
                     +cartStorage[returnFromIndex].quantity + +productToCart.quantity;
                 localStorage.setItem("cameras", JSON.stringify(cartStorage));
-                location.reload();
             //if not add the product
             }else{
                 cartStorage.push(productToCart);
                 localStorage.setItem("cameras", JSON.stringify(cartStorage));
+            };
+            
+            const toastConf = document.getElementById("addedToast");
+            toastConf.toggleAttribute("hidden");
+            document.getElementById('closeToast').addEventListener('click', function(){
+                toastConf.setAttribute("hidden", "");
                 location.reload();
-            }; 
+            });     
         });
-
+        
         
     };
 
