@@ -142,6 +142,8 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
             inputCity: document.querySelector("#inputCity").value,
             inputZip: document.querySelector("#inputZip").value,
         };
+        
+
         //setting the loop for the successful input
         if (
             (condName.test(contactInfo.firstName) === true) &
@@ -172,6 +174,7 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
 
             alert("Merci de respecter les consignes de saisie et de remplir et cocher tous les champs!");
         }
-    };        
-            
+    };    
+    
+    
         

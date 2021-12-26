@@ -28,7 +28,10 @@
           </a>
           <div id="nav__links" class="d-flex">
             <a id="nav__home-icon" class="nav-link" href="../index.html" aria-label="icon accueil"><span class="fas fa-home"></span></a>
-            <a id="nav__cart-icon" class="nav-link" href="../front-end/cart.html" aria-label="icon panier"><span class="fas fa-shopping-basket"></span></a>
+            <a id="nav__cart-icon" class="nav-link" href="../front-end/cart.html" aria-label="icon panier">
+              <span class="fas fa-shopping-basket"></span>
+              <span id="numProdsInCart" class="badge bg-secondary rounded-circle"></span>
+            </a>
           </div>
         </nav> 
     </header>
@@ -39,8 +42,7 @@
         <div id="intro-zone" class="row" role="complementary">
           <div id="intro__wrapper" class="col d-flex justify-content-center">
             <div id="intro__jumbotron" class="jumbotron">
-              <h1 id="intro__h1" class="font-weight-light text-center">Félicitations!</h1>
-              <p id="intro__p" class="font-weight-light text-center">Votre commande est confirmée</p>
+              <h1 id="intro__h1" class="font-weight-light text-center">Votre commande</h1>
             </div>
           </div>    
         </div>
@@ -48,7 +50,7 @@
   
       <!--main content zone: temporary content for testing purposes-->
         <div id="pcontent" class="row text-white" role="main">
-          <div id="pcontent__wrapper" class="col">
+          <div id="orderInfo" class="col">
             
           </div>
         </div>
@@ -72,7 +74,7 @@
   
     <script src="../front-end/js/functions.js"></script>
     <script src="../front-end/js/confirmation.js"></script>
-    <script src="../front-end/js/css.js"></script>
+    <script src="../front-end/js/css.js" async></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
