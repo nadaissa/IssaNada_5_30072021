@@ -7,28 +7,7 @@ if (cartStorage == 0){
     `;
 }else{
     for(product of cartStorage){
-        const indexProduct = cartStorage.indexOf(product);
-        let productsTable = document.querySelector("#cart-tablebody");
-        productsTable.innerHTML += `
-                <tr>                    
-                    <td>
-                        <a href="../front-end/product.html?_id=${product.id}" class="text-light">  
-                            <img src="${product.imageUrl}" class="img-fluid img-thumbnail w-50" alt="${product.name}"><br>                    
-                            <span> ${product.name}</span>
-                        </a>  
-                    </td>
-                    <td class="w-25">
-                        <span type="button" class="fas fa-minus-square removeMinus" data-index="${indexProduct}"></span>
-                        <span class="mx-0 mx-lg-3"> ${product.quantity}</span>
-                        <span type="button" class="fas fa-plus-square addPlus" data-index="${indexProduct}"></span>
-                    </td>
-                    <td class="w-50"> 
-                        <span id="totalItem">${convertPrice(product.quantity * product.price)}</span>
-                        <span class="fas fa-trash-alt deleteTrash" data-index="${indexProduct}"></span>
-                    </td>
-                        
-                </tr>            
-    `
+        productsDisplay(product);
     };
 };
 
@@ -43,7 +22,7 @@ function calculation(){
     let totalCalcul = 0;
     cartStorage.forEach((product) => {
         totalCalcul = totalCalcul + product.price * product.quantity;
-        console.log(totalCalcul);
+        //console.log(totalCalcul);
     });
     return convertPrice(totalCalcul);
 };
@@ -130,51 +109,11 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
     //setting the event listener in case of click on the submit button
     submitForm.addEventListener("click", (validate) =>{
         validate.preventDefault();
-        checkInput();
+        order();
     });
     
-    function checkInput (){
-        const contactInfo = {
-            firstName: document.querySelector("#firstName").value,
-            lastName: document.querySelector("#lastName").value,
-            inputEmail: document.querySelector("#inputEmail").value,
-            inputAddress: document.querySelector("#inputAddress").value,
-            inputCity: document.querySelector("#inputCity").value,
-            inputZip: document.querySelector("#inputZip").value,
-        };
-        
-
-        //setting the loop for the successful input
-        if (
-            (condName.test(contactInfo.firstName) === true) &
-            (condName.test(contactInfo.lastName) === true) &
-            (condMail.test(contactInfo.inputEmail) === true) &
-            (condCity.test(contactInfo.inputCity) === true) &
-            (condZip.test(contactInfo.inputZip) === true) &
-            (condAddress.test(contactInfo.inputAddress) === true) &
-            (checkBox.checked === true) 
-            ) {
-                //alert("bravo!");
-                //the post method
-                fetch("http://localhost:3000/api/cameras/order", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(contactInfo),
-                })
-                    .then((response) => response.json())
-                    .then((data) => {
-                        localStorage.setItem("order", JSON.stringify(data));
-                        document.location.href = "confirmation.html";
-                    })
-                .catch((erreur) => console.log("erreur : " + erreur));
-        //setting the loop for the non-successful input
-        } else {   
-
-            alert("Merci de respecter les consignes de saisie et de remplir et cocher tous les champs!");
-        }
-    };    
+    
+    
     
     
         

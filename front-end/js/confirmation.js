@@ -1,11 +1,13 @@
-const orderParse = JSON.parse(localStorage.getItem("order")) || [];
+const getOrder = localStorage.getItem("order");
+const orderParse = JSON.parse(getOrder) || [];
 //const dateParse = JSON.parse(localStorage.getItem("date")) || [];
 
-console.log(orderParse);
+console.log(getOrder);
 //console.log(dateParse);
 
 //display order info
 const orderInfo = document.getElementById("orderInfo");
-/*orderInfo.innerHTML += `
-<p class="fs-5"><span class="fw-bold text-capitalize">${checkInput.contactInfo.inputEmail}</span>
-`;*/
+orderInfo.innerHTML += `${order.contactInfo.firstName}`;
+
+
+//<p class="fs-5"><span class="fw-bold text-capitalize">${order.contactInfo.firstName}</span>

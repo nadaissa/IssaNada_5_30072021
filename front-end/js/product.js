@@ -55,7 +55,7 @@ fetch(productUrl)
                         <span class="my-1">${convertPrice(singleProduct.price)}</span>                        
                     </p>
                     <button id="addToCartBtn" class="add_btn btn btn-primary btn-dark font-weight-bold my-2">Ajouter au panier</button>
-                    <div class="toast show font-weight-bold " id="addedToast">
+                    <div class="toast show font-weight-bold" id="addedToast" hidden>
                         <div class="toast-header">
                             <strong class="mr-auto">Produit ajouté!</strong>
                             <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" id="closeToast">&times;</button>
