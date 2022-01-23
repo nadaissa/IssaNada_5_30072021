@@ -40,8 +40,19 @@ orderInfo.innerHTML += `
         <span>${orderParse.contactInfo.inputEmail}</span>
     </p>
 
+    <p>
+
+        <a id="leave-page" class="nav-link" href="../index.html" aria-label="icon accueil">
+            <span class="fas fa-hand-point-left"></span>
+            <span>Quitter cette page</span>
+        </a>    
+    </p>
+
     `;
 
-
-
-//<p class="fs-5"><span class="fw-bold text-capitalize">${order.contactInfo.firstName}</span>
+    //reloading page and cartStorage when clicking on leave page
+    const leaveHere = document.getElementById("leave-page");
+    leaveHere.addEventListener("click", (out)=>{
+        out.preventDefault;
+        localStorage.clear();
+    });
