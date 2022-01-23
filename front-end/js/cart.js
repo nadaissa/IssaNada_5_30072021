@@ -11,21 +11,14 @@ if (cartStorage == 0){
     };
 };
 
-//Setting the function for total sum of the shopcart
+//Dsiplaying the function for total sum of the shopcart
 const totalCart = document.querySelector("#total-cart");
 totalCart.innerHTML +=
         `<td>Total Panier</td>
         <td></td>
         <td>${calculation()}</td>`;    
 
-function calculation(){
-    let totalCalcul = 0;
-    cartStorage.forEach((product) => {
-        totalCalcul = totalCalcul + product.price * product.quantity;
-        //console.log(totalCalcul);
-    });
-    return convertPrice(totalCalcul);
-};
+
 
 //Note for indexRef: defining the indexation property for adding and removing products -
 //by targeting data-index attribute in innerHtml content here above
@@ -107,9 +100,65 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
 
     
     //setting the event listener in case of click on the submit button
+    //setting the function for the command form
     submitForm.addEventListener("click", (validate) =>{
         validate.preventDefault();
-        order();
+        let contactInfo = {
+            firstName: document.querySelector("#firstName").value,
+            lastName: document.querySelector("#lastName").value,
+            inputEmail: document.querySelector("#inputEmail").value,
+            inputAddress: document.querySelector("#inputAddress").value,
+            inputCity: document.querySelector("#inputCity").value,
+            inputZip: document.querySelector("#inputZip").value,
+        };
+        
+    
+        //setting the loop for the successful input
+        if (
+            (condName.test(contactInfo.firstName) === true) &
+            (condName.test(contactInfo.lastName) === true) &
+            (condMail.test(contactInfo.inputEmail) === true) &
+            (condCity.test(contactInfo.inputCity) === true) &
+            (condZip.test(contactInfo.inputZip) === true) &
+            (condAddress.test(contactInfo.inputAddress) === true) &
+            (checkBox.checked === true) 
+            ) {
+                let products = [];
+                for (list of cartStorage){
+                    products.push(list.id);            
+                };
+                
+                //setting the order id random operation
+                let orderId = Math.floor((1 + Math.random())* 0x10000)
+                    .toString(16)
+                    .substring(1);
+                    localStorage.setItem("orderId", orderId);
+            
+                //the post method
+                fetch("http://localhost:3000/api/cameras/order", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ contactInfo, products }),
+                })
+                    .then((response) => response.json())
+                    .then(() => {
+                        let order = {
+                            contactInfo,
+                            products,
+                            orderId
+                        };
+                        localStorage.setItem("order", JSON.stringify(order));
+                        document.location.href = "confirmation.html";
+                    })
+                    
+                .catch((erreur) => console.log("erreur : " + erreur));
+            
+            }else{   
+            //setting the loop for the non-successful input
+            alert("Merci de respecter les consignes de saisie et de remplir et cocher tous les champs!");
+        };
     });
     
     

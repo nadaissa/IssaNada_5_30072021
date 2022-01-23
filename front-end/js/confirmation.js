@@ -1,13 +1,47 @@
-const getOrder = localStorage.getItem("order");
-const orderParse = JSON.parse(getOrder) || [];
-//const dateParse = JSON.parse(localStorage.getItem("date")) || [];
+const orderParse = JSON.parse(localStorage.getItem('order')) || [];
 
-console.log(getOrder);
-//console.log(dateParse);
+
+console.log(orderParse);
+
+
+//display products
+for (product of cartStorage) {
+    let finalDisplay = document.getElementById("finalTable");
+    finalDisplay.innerHTML += `
+        <tbody>
+            <tr>
+                <td class="w-50">${product.name}</td>
+                <td class="w-50">${product.quantity}</td>
+            </tr>
+        </tbody>
+    `
+};
 
 //display order info
 const orderInfo = document.getElementById("orderInfo");
-orderInfo.innerHTML += `${order.contactInfo.firstName}`;
+orderInfo.innerHTML += `
+
+    <p>
+        <span class="font-weight-bold">N° de commande: </span>
+        <span>${orderParse.orderId}</span>
+    </p>
+    <p>
+        <span class="font-weight-bold">Nom client(e): </span>
+        <span>${orderParse.contactInfo.firstName}</span>
+        <span>${orderParse.contactInfo.lastName}</span>
+    </p>
+    <p>
+        <span class="font-weight-bold">Somme total réglée: </span>
+        <span>${calculation()}</span>
+    </p>
+
+    <p>
+        <span class="font-weight-bold">Confirmation envoyée à: </span>
+        <span>${orderParse.contactInfo.inputEmail}</span>
+    </p>
+
+    `;
+
 
 
 //<p class="fs-5"><span class="fw-bold text-capitalize">${order.contactInfo.firstName}</span>

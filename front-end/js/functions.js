@@ -39,6 +39,16 @@ function badge(){
     return totalIn;  
 };
 
+//Setting the total price in shopping cart function
+function calculation(){
+    let totalCalcul = 0;
+    cartStorage.forEach((product) => {
+        totalCalcul = totalCalcul + product.price * product.quantity;
+        //console.log(totalCalcul);
+    });
+    return convertPrice(totalCalcul);
+};
+
 //display table of products
 function productsDisplay(product){
     const indexProduct = cartStorage.indexOf(product);
@@ -88,10 +98,9 @@ function order(){
         (condAddress.test(contactInfo.inputAddress) === true) &
         (checkBox.checked === true) 
         ) {
-
-            let productsTable = [];
+            let products = [];
             for (list of cartStorage){
-                productsTable.push(list.id);            
+                products.push(list.id);            
             };
         
             //the post method
@@ -100,20 +109,24 @@ function order(){
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ contactInfo, productsTable }),
+            body: JSON.stringify({ contactInfo, products }),
             })
                 .then((response) => response.json())
-                .then((data) => {
-                    localStorage.setItem("order", JSON.stringify(data));
+                .then(() => {
+                    let order = {
+                        contactInfo,
+                        products
+                    };
+                    localStorage.setItem("order", JSON.stringify(order));
                     document.location.href = "confirmation.html";
                 })
                 
             .catch((erreur) => console.log("erreur : " + erreur));
         
-        } else {   
+        }else{   
         //setting the loop for the non-successful input
         alert("Merci de respecter les consignes de saisie et de remplir et cocher tous les champs!");
-    }
+    };
 };
 
 
