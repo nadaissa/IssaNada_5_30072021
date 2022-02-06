@@ -56,16 +56,16 @@ fetch(productUrl)
                     </p>
                     <button id="addToCartBtn" class="add_btn btn btn-primary btn-dark font-weight-bold my-2">Ajouter au panier</button>
                     <div class="toast show font-weight-bold" id="addedToast" hidden>
-                        <div class="toast-header">
-                            <strong class="mr-auto">Produit ajouté!</strong>
-                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" id="closeToast">&times;</button>
+                        <div class="toast-header" style="background-color: #2E2E2E">
+                            <strong class="mr-auto text-light">Produit ajouté!</strong>
+                            <strong type="button" class="ml-2 mb-1" data-dismiss="toast" style="color: #8F5BFE" id="closeToast">rester ici</strong>
                         </div>
-                        <div class="toast-body">
-                            <a id="nav__cart-icon" class="nav-link" href="cart.html" aria-label="icon panier">
+                        <div class="toast-body" style="background-color: #2E2E2E">
+                            <a id="nav__cart-icon" class="nav-link" style="color: #E78B06" href="cart.html" aria-label="icon panier">
                                 <span class="fas fa-shopping-basket"></span>
                                 => Aller au panier
                             </a>
-                            <a id="nav__home-icon" class="nav-link" href="../index.html" aria-label="icon accueil">
+                            <a id="nav__home-icon" class="nav-link" style="color: #E78B06" href="../index.html" aria-label="icon accueil">
                                 <span class="fas fa-home"></span>
                             <= Retourner aux produits </a>
                         </div>
@@ -113,18 +113,18 @@ fetch(productUrl)
                 cartStorage.push(productToCart);
                 localStorage.setItem("cameras", JSON.stringify(cartStorage));
             };
-            
+
+            //disabling add button and displayin toast with navigation option when product added
+            addBtn.disabled = true;
             const toastConf = document.getElementById("addedToast");
             toastConf.toggleAttribute("hidden");
             document.getElementById('closeToast').addEventListener('click', function(){
                 toastConf.setAttribute("hidden", "");
                 location.reload();
-            });     
+            });              
         });
         
-        
     };
-
 
     
     

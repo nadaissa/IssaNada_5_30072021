@@ -29,7 +29,7 @@ mWrapper.style.cssText =
                 i.style.color="#E78B06";
             };
         
-        const cartBadge = document.getElementById("numProdsInCart");
+        let cartBadge = document.getElementById("numProdsInCart");
         cartBadge.style.cssText = "font-size: xx-small";
 
     //intro style

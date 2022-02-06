@@ -27,7 +27,7 @@ class productObject{
 
 
 //setting the badge preview
-const totalBadge = document.querySelector("#numProdsInCart");
+const totalBadge = document.getElementById("numProdsInCart");
 totalBadge.innerHTML +=
         `<span>${badge()}</span>`;    
 
@@ -40,6 +40,7 @@ function badge(){
 };
 
 //Setting the total price in shopping cart function
+  
 function calculation(){
     let totalCalcul = 0;
     cartStorage.forEach((product) => {
@@ -54,7 +55,7 @@ function productsDisplay(product){
     const indexProduct = cartStorage.indexOf(product);
     let productsTable = document.querySelector("#cart-tablebody");
     productsTable.innerHTML += `
-            <tr>                    
+            <tr class= "items-row">                    
                 <td>
                     <a href="../front-end/product.html?_id=${product.id}" class="text-light">  
                         <img src="${product.imageUrl}" class="img-fluid img-thumbnail w-50" alt="${product.name}"><br>                    
@@ -63,11 +64,11 @@ function productsDisplay(product){
                 </td>
                 <td class="w-25">
                     <span type="button" class="fas fa-minus-square removeMinus" data-index="${indexProduct}"></span>
-                    <span class="mx-0 mx-lg-3"> ${product.quantity}</span>
+                    <span class="mx-0 mx-lg-3 items-qty"> ${product.quantity}</span>
                     <span type="button" class="fas fa-plus-square addPlus" data-index="${indexProduct}"></span>
                 </td>
                 <td class="w-50"> 
-                    <span id="totalItem">${convertPrice(product.quantity * product.price)}</span>
+                    <span id="totalItem" class="total-item">${convertPrice(product.quantity * product.price)}</span>
                     <span class="fas fa-trash-alt deleteTrash" data-index="${indexProduct}"></span>
                 </td>
                     

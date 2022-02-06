@@ -1,7 +1,11 @@
 const orderParse = JSON.parse(localStorage.getItem('order')) || [];
-
-
 console.log(orderParse);
+
+//hide basket icon area
+let hiddenLinks = document.getElementsByClassName("nav-hide");
+    for(i of hiddenLinks){
+        i.style.display="none";
+    };
 
 
 //display products
@@ -44,7 +48,7 @@ orderInfo.innerHTML += `
 
         <a id="leave-page" class="nav-link" href="../index.html" aria-label="icon accueil">
             <span class="fas fa-hand-point-left"></span>
-            <span>Quitter cette page</span>
+            <span>Revenir à l'accueil</span>
         </a>    
     </p>
 

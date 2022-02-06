@@ -61,18 +61,18 @@
                   <th scope="col">Prix</th>
                 </tr>
               </thead>
-              <tbody id="cart-tablebody">
+              <tbody id="cart-tablebody" class="items-container">
                 <!--js content-->
               </tbody>
               <tfoot>
                 <tr id="total-cart">
-                  <!--js content-->
+    
                 </tr>
               </tfoot>            
             </table>
             <!--end of products table-->
             <div class="col d-flex align-items-center justify-content-center my-4">
-              <button type="button" id="emptyCart" class="btn m-1">Supprimer le panier</button>
+              <button type="button" id="emptyCart" class="btn m-1">Vider le panier</button>
             </div>
             <!--order form-->
             <h4 class="text-white font-weight-bold border-bottom border-light mb-3">Confirmation de commande</h4>
@@ -122,7 +122,7 @@
                 </div>
               </div>
               <div class="col d-flex align-items-center justify-content-center my-4">
-                <button type="submit" value = "Submit" class="btn m-1" id="submitBtn" name="submitBtn">Commandez</button>
+                <button id="submitBtn" type="submit" value = "Submit" class="btn m-1" id="submitBtn" name="submitBtn">Commandez</button>
               </div>              
             </form>
             <!--end of order form-->
@@ -146,9 +146,11 @@
       <!--end footer zone-->
     </div>
   
+   
     <script src="../front-end/js/functions.js"></script>
     <script src="../front-end/js/cart.js"></script>
-    <script src="../front-end/js/css.js" async></script>
+    <script src="../front-end/js/css.js"></script>
+    
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

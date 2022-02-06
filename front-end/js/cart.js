@@ -1,3 +1,4 @@
+//setting display functions if cart is empty
 if (cartStorage == 0){
     let productsTable = document.querySelector("#cart-tablebody");
     productsTable.innerHTML += `
@@ -5,6 +6,10 @@ if (cartStorage == 0){
                 <td colspan="3" class="text-center font-weight-bold"> Votre panier est vide</td>
                 </tr>
     `;
+    let emptyDisabled = document.getElementsByTagName("button");
+    for (i of emptyDisabled){
+    i.disabled = true;
+    };
 }else{
     for(product of cartStorage){
         productsDisplay(product);
@@ -16,9 +21,9 @@ const totalCart = document.querySelector("#total-cart");
 totalCart.innerHTML +=
         `<td>Total Panier</td>
         <td></td>
-        <td>${calculation()}</td>`;    
+        <td>${calculation()}</td>`; 
 
-
+        
 
 //Note for indexRef: defining the indexation property for adding and removing products -
 //by targeting data-index attribute in innerHtml content here above
@@ -67,9 +72,13 @@ for (deleting of dltWTrash){
 const emptyCart = document.querySelector("#emptyCart");
 emptyCart.addEventListener('click', (empty) =>{
     empty.preventDefault();
-    localStorage.clear();
-    location.reload();
-});
+    if ( confirm( "êtes-vous certain(e) de vouloir vider votre panier?" ) ) {
+        localStorage.clear();
+        location.reload();
+    } else {
+         
+    }
+    });
 
 
 //setting input rules for form validation
@@ -78,6 +87,8 @@ emptyCart.addEventListener('click', (empty) =>{
 const orderForm = document.querySelector("#orderForm");
 const submitForm = document.querySelector("#submitBtn");
 const checkBox = document.querySelector("#checkbox");
+
+
 
 //setting constants for the regex conditions
 /*for names one or more strings from characters between a and z (lower and upper cases) 
@@ -96,13 +107,19 @@ const condZip = /^(?:[0-8]\d|9[0-8])\d{3}$/;
 //for address same as names but with possibility of numbers and limited to 10 characters by string
 const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
 
-//setting the contactInfo object to use later in the confirmation page
+//setting function for disabling command button in case the cart is empty
+/*if(cartStorage == 0){
+    submitForm.disabled = true;
+}else{
+    submitForm.disabled = false;
+};*/
 
-    
+   
     //setting the event listener in case of click on the submit button
     //setting the function for the command form
     submitForm.addEventListener("click", (validate) =>{
         validate.preventDefault();
+       //setting the contactInfo object to use later in the confirmation page
         let contactInfo = {
             firstName: document.querySelector("#firstName").value,
             lastName: document.querySelector("#lastName").value,
@@ -150,11 +167,11 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
                             orderId
                         };
                         localStorage.setItem("order", JSON.stringify(order));
-                        document.location.href = "confirmation.html";
+                        document.location.href = `confirmation.html?&order=${order.orderId}&name=${order.contactInfo.firstName}`;
+                        //document.location.href = "confirmation.html?&order="+order.orderId+"&contact="+order.contactInfo.firstName;
                     })
                     
                 .catch((erreur) => console.log("erreur : " + erreur));
-            
             }else{   
             //setting the loop for the non-successful input
             alert("Merci de respecter les consignes de saisie et de remplir et cocher tous les champs!");
