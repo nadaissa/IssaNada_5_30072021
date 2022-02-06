@@ -1,14 +1,14 @@
+//parsing the order object posted in the cart page
 const orderParse = JSON.parse(localStorage.getItem('order')) || [];
-console.log(orderParse);
 
-//hide basket icon area
+//hide basket icon area to prevent redirection to cart page
 let hiddenLinks = document.getElementsByClassName("nav-hide");
     for(i of hiddenLinks){
         i.style.display="none";
     };
 
 
-//display products
+//display products infos
 for (product of cartStorage) {
     let finalDisplay = document.getElementById("finalTable");
     finalDisplay.innerHTML += `

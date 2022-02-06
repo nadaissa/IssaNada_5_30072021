@@ -1,14 +1,14 @@
 //query parameter url
 const urlParams = new URLSearchParams(location.search);
 const productId = urlParams.get("_id");
-//const tableOption = urlParams.get("lenses");
+
 
 
 
 //url constant with id parameter
 const productUrl = `http://localhost:3000/api/cameras/${productId}`;
 
-//defining the optional lenses function to be insert to the single product fetch later
+//setting the optional lenses function to be insert to the single product fetch later
 function lenseParam(singleProduct){
     let optionContent = '';
     for (let lense of singleProduct.lenses){
@@ -18,15 +18,10 @@ function lenseParam(singleProduct){
 
 };
 
-
-//let productTable = [];
-
 //fetching single product and defining its display and its add-to-cart method
-
 fetch(productUrl)
     .then((response) => response.json())
     .then((data) => {
-        //productTable.push(data);
         displayProduct(data);
         addItem(data);    
     })
@@ -34,9 +29,9 @@ fetch(productUrl)
     .catch(function(error) {
         console.log('Il y a eu un problème: ' + error.message);
     });
-    //console.log(productTable[0]._id + "test");
     
-
+    
+    //the product display function included in the fetch 
     function displayProduct(singleProduct){    
         const productDiv = document.querySelector("#pcontent");
             productDiv.innerHTML += 
@@ -82,7 +77,7 @@ fetch(productUrl)
         const addBtn = document.querySelector("#addToCartBtn");
         addBtn.addEventListener("click", (addEvent) => {
             addEvent.preventDefault();
-        //create a product object
+        //create a product new object from the class created in the function js document
         const productToCart = new productObject (
             productId,
             productIn.name,
@@ -99,7 +94,7 @@ fetch(productUrl)
             if(specificProd.id === productToCart.id){
                 alreadyAdded = true;
                 returnFromIndex = cartStorage.indexOf(specificProd);
-                //console.log("hello", returnFromIndex);
+                
             };
             };
         
@@ -114,7 +109,7 @@ fetch(productUrl)
                 localStorage.setItem("cameras", JSON.stringify(cartStorage));
             };
 
-            //disabling add button and displayin toast with navigation option when product added
+            //disabling add button and displaying toast with navigation option when product added
             addBtn.disabled = true;
             const toastConf = document.getElementById("addedToast");
             toastConf.toggleAttribute("hidden");

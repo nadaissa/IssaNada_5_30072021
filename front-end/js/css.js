@@ -57,31 +57,33 @@ mWrapper.style.cssText =
 
 
 //shopping cart styling rules
-const cartTable = document.getElementById("productTable");
-        cartTable.style.cssText =
-        "color: #ffffff; background: #2E2E2E; max-width: 700px;";
+    //products table
+    const cartTable = document.getElementById("productTable");
+            cartTable.style.cssText =
+            "color: #ffffff; background: #2E2E2E; max-width: 700px;";
+        //inner buttons
+        const minusBtn = document.getElementsByClassName("fa-minus-square");
+            for(i of minusBtn) {
+                i.style.cssText = 
+                "color: #8F5BFE";
+            };
+            
+        const plusBtn = document.getElementsByClassName("fa-plus-square");
+            for(i of plusBtn) {
+                i.style.cssText = 
+            "color: #E78B06";
+            };
 
-const minusBtn = document.getElementsByClassName("fa-minus-square");
-    for(i of minusBtn) {
-        i.style.cssText = 
-        "color: #8F5BFE";
-    };
-    
-const plusBtn = document.getElementsByClassName("fa-plus-square");
-    for(i of plusBtn) {
-        i.style.cssText = 
-    "color: #E78B06";
-    };
+        const deleteIcon = document.getElementsByClassName("fa-trash-alt");
+            for(i of deleteIcon) {
+                i.style.cssText = 
+            "color: #CD5C5C; margin-left: 10px";
+            };
+    //outer buttons
+    const deleteAll = document.getElementById("emptyCart");
+        deleteAll.style.background = "#CD5C5C";
 
-const deleteIcon = document.getElementsByClassName("fa-trash-alt");
-    for(i of deleteIcon) {
-        i.style.cssText = 
-    "color: #CD5C5C; margin-left: 10px";
-    };
+    const submitBtn = document.getElementById("submitBtn");
+        submitBtn.style.background = "#E78B06";
 
-const deleteAll = document.getElementById("emptyCart");
-    deleteAll.style.background = "#CD5C5C";
-
-const submitBtn = document.getElementById("submitBtn");
-    submitBtn.style.background = "#E78B06";
 //end of shopping cart styling rules

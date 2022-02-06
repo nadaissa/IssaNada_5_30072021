@@ -1,8 +1,9 @@
-//Fetch to display the shopping elements on the index page
+//Fetch command to display the shopping elements on the index page
 
 fetch("http://localhost:3000/api/cameras")
         .then((response) => response.json())
         .then((data) => {
+        //calling the display function
         listProducts(data);
     })
 
@@ -11,9 +12,8 @@ fetch("http://localhost:3000/api/cameras")
         console.log('Il y a eu un problème: ' + error.message);
     });
 
-    //The function mentioned in the fetch needs to be configured in order to display the products
-    //image, title and description are called directly in the data fetched previously and then in relation to the product class i've created
-    //the link to the product page includes the query http protocole with reference to the product id
+    //The function included in the fetch to display the products
+    //the link to the product page includes the query http protocol with reference to the product id
     function listProducts(data) {
         for (product of data){
             const displayDiv = document.querySelector("#pcontent");
