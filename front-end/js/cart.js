@@ -167,7 +167,7 @@ const condAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
                             orderId
                         };
                         localStorage.setItem("order", JSON.stringify(order));
-                        document.location.href = `confirmation.html?&order=${order.orderId}&name=${order.contactInfo.firstName}`;
+                        document.location.href = `confirmation.html?&${order.orderId}&${order.contactInfo.firstName}&${order.contactInfo.lastName}`;
                         //document.location.href = "confirmation.html?&order="+order.orderId+"&contact="+order.contactInfo.firstName;
                     })
                     

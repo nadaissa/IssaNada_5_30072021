@@ -40,11 +40,11 @@ fetch(productUrl)
     function displayProduct(singleProduct){    
         const productDiv = document.querySelector("#pcontent");
             productDiv.innerHTML += 
-            `<div class="col productCard">
+            `<div class="col productCard" style="max-width: 550px">
             <div class="card mt-4">
-                <img class="card-img-top img-fluid " src="${singleProduct.imageUrl}" alt="Card image cap">
+                <img class="card-img-top img-fluid" style="width: 100%; height: 75%" src="${singleProduct.imageUrl}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title font-weight-bold">${singleProduct.name}</h5>
+                    <h2 class="card-title font-weight-bold h5">${singleProduct.name}</h2>
                     <p class="card-text">${singleProduct.description}</p>
                     <select class="custom-select my-2">
                         <option >Modèles</option>

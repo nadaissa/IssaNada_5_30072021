@@ -75,50 +75,50 @@
               <button type="button" id="emptyCart" class="btn m-1">Vider le panier</button>
             </div>
             <!--order form-->
-            <h4 class="text-white font-weight-bold border-bottom border-light mb-3">Confirmation de commande</h4>
+            <h2 class="text-white font-weight-bold border-bottom border-light mb-3 h4">Confirmation de commande</h2>
             <form class="text-white my-4" id="orderForm" name="orderForm">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="firstName">Prénom</label>
+                  <label for="firstName" class="font-weight-bold">Prénom</label>
                   <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Prénom" required>
-                  <small id="fNameHelp" class="form-text text-muted">Votre prénom ne doit pas comporter de caractères spéciaux</small>
+                  <small id="fNameHelp" class="form-text">Votre prénom ne doit pas comporter de caractères spéciaux</small>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="lastName">Nom</label>
+                  <label for="lastName" class="font-weight-bold">Nom</label>
                   <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Nom" required>
-                  <small id="lNameHelp" class="form-text text-muted">Votre Nom ne doit pas comporter de caractères spéciaux</small>
+                  <small id="lNameHelp" class="form-text">Votre Nom ne doit pas comporter de caractères spéciaux</small>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="inputEmail">Email</label>
+                  <label for="inputEmail" class="font-weight-bold">Email</label>
                   <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required>
-                  <small id="emailHelp" class="form-text text-muted">Votre adresse mail doit comporter un @</small>
+                  <small id="emailHelp" class="form-text">Votre adresse mail doit comporter un @</small>
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputAddress">Adresse</label>
+                <label for="inputAddress" class="font-weight-bold">Adresse</label>
                 <input type="text" class="form-control" id="inputAddress" name="inputAddress" placeholder="Numéro et nom de la rue" required>
-                <small id="addressHelp" class="form-text text-muted">Numéro de votre rue suivi de son nom sans caractères spéciaux</small>
+                <small id="addressHelp" class="form-text">Numéro de votre rue suivi de son nom sans caractères spéciaux</small>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="inputCity">Ville</label>
+                  <label for="inputCity" class="font-weight-bold">Ville</label>
                   <input type="text" class="form-control" id="inputCity" name="inputCity" placeholder="Votre ville" required>
-                  <small id="villeHelp" class="form-text text-muted">Votre ville en toutes lettres</small>
+                  <small id="villeHelp" class="form-text">Votre ville en toutes lettres</small>
                 
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputZip">Code postal</label>
+                  <label for="inputZip" class="font-weight-bold">Code postal</label>
                   <input type="text" class="form-control" id="inputZip" name="inputZip" placeholder="Code postal" required>
-                  <small id="zipHelp" class="form-text text-muted">Votre CP de 5 chiffres</small>
+                  <small id="zipHelp" class="form-text">Votre CP de 5 chiffres</small>
                 </div>
               </div>
               <div class="form-group">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="checkbox" name="checkbox" required>
-                  <label class="form-check-label" for="checkbox">
+                  <label class="form-check-label" for="checkbox" class="font-weight-bold">
                     Acceptez nos conditions
                   </label>
-                  <small id="checkHelp" class="form-text text-muted">Et enfin un petit click!</small>
+                  <small id="checkHelp" class="form-text">Et enfin un petit click!</small>
                 </div>
               </div>
               <div class="col d-flex align-items-center justify-content-center my-4">
@@ -149,7 +149,7 @@
    
     <script src="../front-end/js/functions.js"></script>
     <script src="../front-end/js/cart.js"></script>
-    <script src="../front-end/js/css.js"></script>
+    <script src="../front-end/js/css.js" async></script>
     
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

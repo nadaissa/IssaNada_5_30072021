@@ -18,11 +18,11 @@ fetch("http://localhost:3000/api/cameras")
         for (product of data){
             const displayDiv = document.querySelector("#pcontent");
             displayDiv.innerHTML +=
-            `<div class="col-sm-6">
-                <div class="card mt-4">
-                        <img class="card-img-top" src="${product.imageUrl}" alt="Card image cap">
+            `<div class="col-sm-6 d-flex justify-content-center">
+                <div class="card mt-4" style="max-width: 550px">
+                        <img class="card-img-top img-fluid" style="width: 100%; height:75%"src="${product.imageUrl}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title font-weight-bold">${product.name}</h5>
+                            <h2 class="card-title font-weight-bold h5">${product.name}</h2>
                             <a href="../front-end/product.html?_id=${product._id}" class="btn btn-primary btn-dark font-weight-bold">Voir le produit</a>
                         </div>
                 </div>
