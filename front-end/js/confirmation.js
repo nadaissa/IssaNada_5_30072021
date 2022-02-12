@@ -35,7 +35,7 @@ orderInfo.innerHTML += `
         <span>${orderParse.contactInfo.lastName}</span>
     </p>
     <p>
-        <span class="font-weight-bold">Somme total réglée: </span>
+        <span class="font-weight-bold">Somme totale réglée: </span>
         <span>${calculation()}</span>
     </p>
 
@@ -57,6 +57,12 @@ orderInfo.innerHTML += `
     //reloading page and cartStorage when clicking on leave page
     const leaveHere = document.getElementById("leave-page");
     leaveHere.addEventListener("click", (out)=>{
+        out.preventDefault;
+        localStorage.clear();
+    });
+
+    const indexIcon = document.getElementById("nav__logo-link");
+    indexIcon.addEventListener("click", (out)=>{
         out.preventDefault;
         localStorage.clear();
     });
